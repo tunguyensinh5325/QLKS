@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKSDAO", "QLKSDAO\QLKSDAO.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKSBUS", "QLKSBUS\QLKSBUS.csproj", "{D23A4246-6A61-4113-B1A6-6E86A04CD821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form_BaoCaoDoanhThu", "..\..\Downloads\Form_BaoCaoDoanhThu\Form_BaoCaoDoanhThu\Form_BaoCaoDoanhThu.csproj", "{F5CBA26B-0248-49C9-A16A-4DC675986BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form_BaoCaoMatDo", "..\..\Downloads\Form_BaoCaoMatDo\Form_BaoCaoMatDo\Form_BaoCaoMatDo.csproj", "{3FFDF1FA-9774-427F-A421-4E76FFEAF982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{D23A4246-6A61-4113-B1A6-6E86A04CD821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D23A4246-6A61-4113-B1A6-6E86A04CD821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D23A4246-6A61-4113-B1A6-6E86A04CD821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5CBA26B-0248-49C9-A16A-4DC675986BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5CBA26B-0248-49C9-A16A-4DC675986BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5CBA26B-0248-49C9-A16A-4DC675986BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5CBA26B-0248-49C9-A16A-4DC675986BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFDF1FA-9774-427F-A421-4E76FFEAF982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFDF1FA-9774-427F-A421-4E76FFEAF982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFDF1FA-9774-427F-A421-4E76FFEAF982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFDF1FA-9774-427F-A421-4E76FFEAF982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

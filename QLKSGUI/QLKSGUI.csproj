@@ -19,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Form_Baocaodoanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Baocaomatdo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form_DSPhong.cs">
       <SubType>Form</SubType>
     </Compile>

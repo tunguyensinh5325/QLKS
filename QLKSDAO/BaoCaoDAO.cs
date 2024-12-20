@@ -2,6 +2,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic;
 using QLKSDTO;
 
 namespace QLKSDAO

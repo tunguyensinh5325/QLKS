@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic;
 using QLKSDTO;
 using QLKSDAO;
 
