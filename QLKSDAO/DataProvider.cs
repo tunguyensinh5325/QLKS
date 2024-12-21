@@ -15,7 +15,7 @@ namespace QLKSDAO
         {
             get
             {
-                return "Data Source=Trùm\\SQLEXPRESS01;Initial Catalog=qlsvienforwin;Integrated Security=True;TrustServerCertificate=True";
+                return ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             }
         }
         public static DataTable TruyVan_LayDuLieu(string sql)
