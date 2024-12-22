@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic;
 using QLKSDTO;
