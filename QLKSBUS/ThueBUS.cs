@@ -67,5 +67,24 @@ namespace QLKSBUS
                 return false;
             }
         }
+
+        public static bool ThemKhachThue(Thue thue)
+        {
+            if (string.IsNullOrEmpty(thue.MaPhong) || string.IsNullOrEmpty(thue.CMND))
+                return false;
+
+            try
+            {
+                ThueDAO.ThemPhieuThue(thue);
+
+                PhongDAO.CapNhatTinhTrangPhong(thue.MaPhong, "Đã thuê");
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
