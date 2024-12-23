@@ -1,11 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLKSDTO;
 using QLKSBUS;
@@ -17,23 +11,24 @@ namespace QLKSGUI
         private ErrorProvider errorProvider;
         private List<KhachHang> danhSachKhachHang;
         private string maPhong;
-        public Form_PhieuThuePhong()
+
+        public Form_PhieuThuePhong(string maPhong)
         {
             InitializeComponent();
             this.maPhong = maPhong;
             danhSachKhachHang = new List<KhachHang>();
             errorProvider = new ErrorProvider();
         }
-        private void frmKhachHang_Load(object sender, EventArgs e)
+
+        private void Form_PhieuThuePhong_Load(object sender, EventArgs e)
         {
-            lbl_PhieuThuePhong.Text = $"Phiếu thuê phòng: {maPhong}"; // Gán tên phòng
+            lbl_PhieuThuePhong.Text = $"Phiếu thuê phòng: {maPhong}"; // Gán mã phòng vào label
         }
 
         private bool ValidateInputs()
         {
             bool isValid = true;
 
-            // Kiểm tra tên khách hàng
             if (string.IsNullOrWhiteSpace(txt_Ten.Text))
             {
                 errorProvider.SetError(txt_Ten, "Vui lòng nhập tên khách hàng.");
@@ -44,7 +39,6 @@ namespace QLKSGUI
                 errorProvider.SetError(txt_Ten, "");
             }
 
-            // Kiểm tra CMND
             if (string.IsNullOrWhiteSpace(txt_CMND.Text))
             {
                 errorProvider.SetError(txt_CMND, "Vui lòng nhập số CMND.");
@@ -60,7 +54,6 @@ namespace QLKSGUI
                 errorProvider.SetError(txt_CMND, "");
             }
 
-            // Kiểm tra loại khách
             if (!rdbtn_NoiDia.Checked && !rdbtn_NuocNgoai.Checked)
             {
                 errorProvider.SetError(gr_LoaiKhach, "Vui lòng chọn loại khách hàng.");
@@ -91,7 +84,6 @@ namespace QLKSGUI
 
             danhSachKhachHang.Add(kh);
 
-            // Thêm vào ListView
             ListViewItem item = new ListViewItem(new[]
             {
                 (liv_KhachHang.Items.Count + 1).ToString(),
@@ -102,7 +94,6 @@ namespace QLKSGUI
             });
             liv_KhachHang.Items.Add(item);
 
-            // Reset form
             txt_Ten.Clear();
             txt_CMND.Clear();
             txt_DiaChi.Clear();
@@ -122,16 +113,22 @@ namespace QLKSGUI
 
             foreach (KhachHang kh in danhSachKhachHang)
             {
-                bool result = KhachHangBUS.ThemKhachHang(kh);
-                if (!result)
+                if (!KhachHangBUS.ThemKhachHang(kh))
                 {
                     MessageBox.Show($"Thêm khách hàng {kh.TenKH} vào cơ sở dữ liệu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
 
-            MessageBox.Show("Xuất phiếu thuê phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            if (PhongBUS.CapNhatTinhTrangPhong(maPhong, "Đã thuê"))
+            {
+                MessageBox.Show("Xuất phiếu thuê phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật trạng thái phòng thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
