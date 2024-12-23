@@ -38,7 +38,15 @@ namespace QLKSDAO
 
             return dsPhong;
         }
-
+        
+        public static void CapNhatTinhTrangPhong(string maPhong, string tinhTrang)
+        {
+            string sql = @"UPDATE Phong SET TinhTrang = @TinhTrang WHERE MaPhong = @MaPhong";
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = new SqlParameter("@MaPhong", maPhong);
+            parameters[1] = new SqlParameter("@TinhTrang", tinhTrang);
+            DataProvider.ExcuteNonQuery(sql, CommandType.Text, parameters);
+        }
         public static void ThemPhong(Phong p)
         {
             string sql = @"INSERT INTO Phong(MaPhong, LoaiPhong, TinhTrang, Gia, GhiChu) 
@@ -61,7 +69,6 @@ namespace QLKSDAO
             }
         }
 
-        // Xóa phòng dựa trên mã phòng
         public static void XoaPhong(string maPhong)
         {
             string sql = "DELETE FROM Phong WHERE MaPhong = @MaPhong";
@@ -79,7 +86,6 @@ namespace QLKSDAO
             }
         }
 
-        // Cập nhật thông tin phòng
         public static void CapNhatPhong(Phong p)
         {
             string sql = @"UPDATE Phong 
@@ -106,7 +112,6 @@ namespace QLKSDAO
             }
         }
 
-        // Lấy thông tin phòng theo mã phòng
         public static Phong LayPhongTheoMa(string maPhong)
         {
             Phong p = null;
