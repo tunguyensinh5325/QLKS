@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             lb_DanhSachPhong = new Label();
-            listView1 = new ListView();
-            cl_STT = new ColumnHeader();
-            cl_Phong = new ColumnHeader();
-            cl_LoaiPhong = new ColumnHeader();
-            cl_DonGia = new ColumnHeader();
-            cl_TinhTrang = new ColumnHeader();
             btn_TimPhong = new Button();
             cbbox_Phong = new ComboBox();
+            dtgv_dsphong = new DataGridView();
+            btn_QuayLai = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).BeginInit();
             SuspendLayout();
             // 
             // lb_DanhSachPhong
@@ -49,48 +46,6 @@
             lb_DanhSachPhong.TabIndex = 0;
             lb_DanhSachPhong.Text = "Danh Sách Phòng";
             // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { cl_STT, cl_Phong, cl_LoaiPhong, cl_DonGia, cl_TinhTrang });
-            listView1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(130, 175);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(674, 258);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // cl_STT
-            // 
-            cl_STT.Text = "STT";
-            cl_STT.Width = 80;
-            // 
-            // cl_Phong
-            // 
-            cl_Phong.Text = "Phòng";
-            cl_Phong.TextAlign = HorizontalAlignment.Center;
-            cl_Phong.Width = 150;
-            // 
-            // cl_LoaiPhong
-            // 
-            cl_LoaiPhong.Text = "Loại Phòng";
-            cl_LoaiPhong.TextAlign = HorizontalAlignment.Center;
-            cl_LoaiPhong.Width = 160;
-            // 
-            // cl_DonGia
-            // 
-            cl_DonGia.Text = "Đơn Giá";
-            cl_DonGia.TextAlign = HorizontalAlignment.Center;
-            cl_DonGia.Width = 140;
-            // 
-            // cl_TinhTrang
-            // 
-            cl_TinhTrang.Text = "Tình Trạng";
-            cl_TinhTrang.TextAlign = HorizontalAlignment.Center;
-            cl_TinhTrang.Width = 140;
-            // 
             // btn_TimPhong
             // 
             btn_TimPhong.Location = new Point(130, 114);
@@ -99,6 +54,7 @@
             btn_TimPhong.TabIndex = 2;
             btn_TimPhong.Text = "Tìm Phòng";
             btn_TimPhong.UseVisualStyleBackColor = true;
+            btn_TimPhong.Click += btn_TimPhong_Click;
             // 
             // cbbox_Phong
             // 
@@ -110,17 +66,40 @@
             cbbox_Phong.Size = new Size(182, 33);
             cbbox_Phong.TabIndex = 3;
             // 
-            // Form_DanhSachPhong
+            // dtgv_dsphong
+            // 
+            dtgv_dsphong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgv_dsphong.Location = new Point(70, 183);
+            dtgv_dsphong.Name = "dtgv_dsphong";
+            dtgv_dsphong.RowHeadersWidth = 62;
+            dtgv_dsphong.RowTemplate.Height = 33;
+            dtgv_dsphong.Size = new Size(808, 280);
+            dtgv_dsphong.TabIndex = 4;
+            dtgv_dsphong.RowPostPaint += dtgv_dsphong_RowPostPaint;
+            // 
+            // btn_QuayLai
+            // 
+            btn_QuayLai.Location = new Point(487, 112);
+            btn_QuayLai.Name = "btn_QuayLai";
+            btn_QuayLai.Size = new Size(112, 34);
+            btn_QuayLai.TabIndex = 5;
+            btn_QuayLai.Text = "Quay Lại";
+            btn_QuayLai.UseVisualStyleBackColor = true;
+            btn_QuayLai.Click += btn_QuayLai_Click;
+            // 
+            // Form_DSPhong
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(956, 533);
+            Controls.Add(btn_QuayLai);
+            Controls.Add(dtgv_dsphong);
             Controls.Add(cbbox_Phong);
             Controls.Add(btn_TimPhong);
-            Controls.Add(listView1);
             Controls.Add(lb_DanhSachPhong);
-            Name = "Form_DanhSachPhong";
+            Name = "Form_DSPhong";
             Text = "Danh Sách Phòng";
+            ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,13 +107,9 @@
         #endregion
 
         private Label lb_DanhSachPhong;
-        private ListView listView1;
-        private ColumnHeader cl_STT;
-        private ColumnHeader cl_Phong;
-        private ColumnHeader cl_LoaiPhong;
-        private ColumnHeader cl_DonGia;
-        private ColumnHeader cl_TinhTrang;
         private Button btn_TimPhong;
         private ComboBox cbbox_Phong;
+        private DataGridView dtgv_dsphong;
+        private Button btn_QuayLai;
     }
 }

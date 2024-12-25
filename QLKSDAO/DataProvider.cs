@@ -19,9 +19,10 @@ namespace QLKSDAO
                 return ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             }
         }
+        private static string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True;Trust Server Certificate=True";
         public static DataTable TruyVan_LayDuLieu(string sql)
         {
-            SqlConnection con = new SqlConnection(ChuoiKetNoi);
+            SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
             DataTable kq = new DataTable();
             da.Fill(kq);
@@ -30,7 +31,7 @@ namespace QLKSDAO
         public static DataTable SelectData(string sql, CommandType type, SqlParameter[] paras)
         {
             DataTable kq = new DataTable();
-            SqlConnection sqlcon = new SqlConnection(ChuoiKetNoi);
+            SqlConnection sqlcon = new SqlConnection(connectionString);
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sqlcon;
@@ -45,7 +46,7 @@ namespace QLKSDAO
         }
         public static void ExcuteNonQuery(string sql, CommandType type, SqlParameter[] paras)
         {
-            SqlConnection sqlcon = new SqlConnection(ChuoiKetNoi);
+            SqlConnection sqlcon = new SqlConnection(connectionString);
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sqlcon;
@@ -57,6 +58,19 @@ namespace QLKSDAO
             sqlcon.Close();
         }
 
+        public static DataTable ExecuteQuery(string query, object[] parameter = null)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
 
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                connection.Close();
+            }
+            return data;
+        }
     }
 }

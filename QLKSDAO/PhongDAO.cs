@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic;
 using QLKSDTO;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace QLKSDAO
 {
@@ -144,6 +146,47 @@ namespace QLKSDAO
             }
 
             return p;
+        }
+
+        public static DataTable LayDSPhongTrong()
+        {
+            string query = @"SELECT MaPhong as N'Phòng', 
+                           LoaiPhong as N'Loại Phòng',
+                           TinhTrang as N'Tình Trạng',
+                           Gia as N'Giá'
+                           FROM Phong 
+                           WHERE TinhTrang = N'Trống'";
+            return DataProvider.ExecuteQuery(query);
+        }
+
+        public static DataTable TimPhongTheoLoai(string loaiPhong)
+        {
+            string query = @"SELECT MaPhong as N'Phòng', 
+                           LoaiPhong as N'Loại Phòng',
+                           TinhTrang as N'Tình Trạng',
+                           Gia as N'Giá'
+                           FROM Phong 
+                           WHERE TinhTrang = N'Trống'";
+
+            if (!string.IsNullOrEmpty(loaiPhong) && loaiPhong != "Tất cả")
+            {
+                string loaiPhongQuery = "";
+                switch (loaiPhong)
+                {
+                    case "Đơn":
+                        loaiPhongQuery = "Phòng đơn";
+                        break;
+                    case "Đôi":
+                        loaiPhongQuery = "Phòng đôi";
+                        break;
+                    case "Lớn":
+                        loaiPhongQuery = "Phòng lớn";
+                        break;
+                }
+                query += $" AND LoaiPhong = N'{loaiPhongQuery}'";
+            }
+
+            return DataProvider.ExecuteQuery(query);
         }
     }
 }
