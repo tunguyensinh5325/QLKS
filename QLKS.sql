@@ -113,40 +113,6 @@ VALUES
 ('P001-240601', 'P001', N'Phòng lớn', 3, 600000),
 ('P003-240612', 'P003', N'Phòng lớn', 3, 900000);
 
-CREATE FUNCTION dbo.TinhTongTienPhong
-(
-    @MaPhong CHAR(5),
-    @NgayDat DATETIME,
-    @NgayTra DATETIME
-)
-RETURNS DECIMAL(18, 2)
-AS
-BEGIN
-    DECLARE @Gia INT;
-    DECLARE @SoNgay INT;
-    DECLARE @ThanhTien DECIMAL(18, 2);
-
-    SELECT @Gia = Gia FROM Phong WHERE MaPhong = @MaPhong;
-
-    -- Tính số ngày thuê
-    SET @SoNgay = DATEDIFF(DAY, @NgayDat, @NgayTra);
-
-    -- Tính thành tiền
-    SET @ThanhTien = @Gia * @SoNgay;
-
-    RETURN @ThanhTien;
-END
-
-drop function dbo.TinhTongTienPhong;
-drop table KhachHang;
-drop table Thue;
-drop table HoaDon;
-drop table BaoCao;
-
-select MaPhong as N'Phòng', LoaiPhong as N'Loại Phòng',TinhTrang as N'Tình Trạng',Gia as N'Giá'
-from Phong 
-where TinhTrang = N'Trống';
-
 select * from Phong
 select * from KhachHang
 select * from Thue
