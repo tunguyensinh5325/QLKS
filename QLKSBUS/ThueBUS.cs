@@ -75,7 +75,7 @@ namespace QLKSBUS
 
             try
             {
-                ThueDAO.ThemPhieuThue(thue);
+                //ThueDAO.ThemPhieuThue(thue);
 
                 PhongDAO.CapNhatTinhTrangPhong(thue.MaPhong, "Đã thuê");
 

@@ -120,15 +120,15 @@ namespace QLKSGUI
                 }
             }
 
-            if (PhongBUS.CapNhatTinhTrangPhong(maPhong, "Đã thuê"))
-            {
-                MessageBox.Show("Xuất phiếu thuê phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật trạng thái phòng thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if (PhongBUS.CapNhatTinhTrangPhong(maPhong, "Đã thuê"))
+            //{
+            //    MessageBox.Show("Xuất phiếu thuê phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Cập nhật trạng thái phòng thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)

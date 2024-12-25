@@ -273,7 +273,7 @@
             Controls.Add(lbl_PhieuThuePhong);
             Name = "Form_PhieuThuePhong";
             Text = "PhieuThuePhong";
-            Load += frmKhachHang_Load;
+            //Load += frmKhachHang_Load;
             gr_LoaiKhach.ResumeLayout(false);
             gr_LoaiKhach.PerformLayout();
             ResumeLayout(false);
