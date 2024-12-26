@@ -1,4 +1,4 @@
-﻿namespace Form_DSPhong_HoaDon
+﻿namespace QLKSGUI
 {
     partial class Form_DSPhong
     {
@@ -99,6 +99,7 @@
             Controls.Add(lb_DanhSachPhong);
             Name = "Form_DSPhong";
             Text = "Danh Sách Phòng";
+            Load += Form_DSPhong_Load_1;
             ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -14,6 +14,12 @@ namespace QLKSBUS
             return ThueDAO.LayDSThue();
         }
 
+        public static List<Thue> LayThueKhachChuaThanhToan(string CMND)
+        {
+            return LayThueKhachChuaThanhToan(CMND);
+        }
+
+
         public static bool ThemThue(Thue t)
         {
             if (string.IsNullOrEmpty(t.MaPhong) || string.IsNullOrEmpty(t.CMND))
@@ -25,6 +31,7 @@ namespace QLKSBUS
             try
             {
                 ThueDAO.ThemThue(t);
+                PhongDAO.CapNhatTinhTrangPhong(t.MaPhong, "Đã thuê");
                 return true;
             }
             catch
@@ -68,23 +75,8 @@ namespace QLKSBUS
             }
         }
 
-        public static bool ThemKhachThue(Thue thue)
-        {
-            if (string.IsNullOrEmpty(thue.MaPhong) || string.IsNullOrEmpty(thue.CMND))
-                return false;
+        
 
-            try
-            {
-                //ThueDAO.ThemPhieuThue(thue);
 
-                PhongDAO.CapNhatTinhTrangPhong(thue.MaPhong, "Đã thuê");
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
     }
 }

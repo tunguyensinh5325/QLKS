@@ -6,5 +6,10 @@ namespace Form_BaoCaoMatDo
         {
             InitializeComponent();
         }
+
+        private void Form_Baocaomatdo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

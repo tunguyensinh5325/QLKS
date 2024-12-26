@@ -1,7 +1,7 @@
 ﻿using QLKSDAO;
 using QLKSDTO;
 
-namespace Form_DSPhong_HoaDon
+namespace QLKSGUI
 {
     public partial class Form_DSPhong : Form
     {
@@ -58,6 +58,9 @@ namespace Form_DSPhong_HoaDon
             this.Close();
         }
 
+        private void Form_DSPhong_Load_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }

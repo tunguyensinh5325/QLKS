@@ -30,6 +30,7 @@ namespace QLKSBUS
             try
             {
                 HoaDonDAO.ThemHoaDon(hoaDon);
+                PhongDAO.CapNhatTinhTrangPhong(hoaDon.MaPhong, "Trống");
                 return true;
             }
             catch

@@ -7,6 +7,7 @@ using Microsoft.VisualBasic;
 using QLKSDTO;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Reflection.Metadata.Ecma335;
 
 namespace QLKSDAO
 {
@@ -40,7 +41,50 @@ namespace QLKSDAO
 
             return dsPhong;
         }
-        
+
+        public static List<Phong> LayDSPhongTrong()
+        {
+            string query = "SELECT * FROM Phong where TinhTrang=N'Trống'";
+            List<Phong> dsPhong = new List<Phong>();
+            DataTable dtPhong = DataProvider.SelectData(query,CommandType.Text,null);
+            foreach (DataRow row in dtPhong.Rows)
+            {
+                Phong phong = new Phong
+                {
+
+                    MaPhong = row["MaPhong"].ToString(),
+                    LoaiPhong = row["LoaiPhong"].ToString(),
+                    TinhTrang = row["TinhTrang"].ToString(),
+                    Gia = Convert.ToInt32(row["Gia"]),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+                dsPhong.Add(phong);
+            }
+            return dsPhong;
+        }
+        public static List<Phong> TimPhongTheoLoai(string loaiPhong)
+        {
+            string query = @"SELECT * FROM Phong where LoaiPhong=@LP";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@LP", loaiPhong);
+            List <Phong> dsPhong = new List<Phong>();
+            DataTable dtPhong = DataProvider.SelectData(query, CommandType.Text, parameters);
+            foreach (DataRow row in dtPhong.Rows)
+            {
+                Phong phong = new Phong
+                {
+
+                    MaPhong = row["MaPhong"].ToString(),
+                    LoaiPhong = row["LoaiPhong"].ToString(),
+                    TinhTrang = row["TinhTrang"].ToString(),
+                    Gia = Convert.ToInt32(row["Gia"]),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+                dsPhong.Add(phong);
+            }
+            return dsPhong;
+        }
+
         public static void CapNhatTinhTrangPhong(string maPhong, string tinhTrang)
         {
             string sql = @"UPDATE Phong SET TinhTrang = @TinhTrang WHERE MaPhong = @MaPhong";
@@ -148,45 +192,8 @@ namespace QLKSDAO
             return p;
         }
 
-        public static DataTable LayDSPhongTrong()
-        {
-            string query = @"SELECT MaPhong as N'Phòng', 
-                           LoaiPhong as N'Loại Phòng',
-                           TinhTrang as N'Tình Trạng',
-                           Gia as N'Giá'
-                           FROM Phong 
-                           WHERE TinhTrang = N'Trống'";
-            return DataProvider.ExecuteQuery(query);
-        }
+        
 
-        public static DataTable TimPhongTheoLoai(string loaiPhong)
-        {
-            string query = @"SELECT MaPhong as N'Phòng', 
-                           LoaiPhong as N'Loại Phòng',
-                           TinhTrang as N'Tình Trạng',
-                           Gia as N'Giá'
-                           FROM Phong 
-                           WHERE TinhTrang = N'Trống'";
-
-            if (!string.IsNullOrEmpty(loaiPhong) && loaiPhong != "Tất cả")
-            {
-                string loaiPhongQuery = "";
-                switch (loaiPhong)
-                {
-                    case "Đơn":
-                        loaiPhongQuery = "Phòng đơn";
-                        break;
-                    case "Đôi":
-                        loaiPhongQuery = "Phòng đôi";
-                        break;
-                    case "Lớn":
-                        loaiPhongQuery = "Phòng lớn";
-                        break;
-                }
-                query += $" AND LoaiPhong = N'{loaiPhongQuery}'";
-            }
-
-            return DataProvider.ExecuteQuery(query);
-        }
+       
     }
 }
