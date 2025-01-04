@@ -49,8 +49,14 @@ namespace QLKSGUI
                 return;
             }
 
-            dtgv_dsphong.DataSource = PhongDAO.TimPhongTheoLoai(selectedItem);
+            if (selectedItem == "Tất cả")
+            {
+                dtgv_dsphong.DataSource = PhongDAO.LayDSPhongTrong();
+                return;
+            }
 
+            string searchType = "Phòng " + selectedItem.ToLower();
+            dtgv_dsphong.DataSource = PhongDAO.TimPhongTheoLoai(searchType);
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
