@@ -61,5 +61,10 @@ namespace QLKSBUS
                 return false;
             }
         }
+
+        public static KhachHang LayTTKH(string CMND)
+        {
+            return KhachHangDAO.LayKhachHangTheoCMND(CMND);
+        }
     }
 }

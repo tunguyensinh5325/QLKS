@@ -1,4 +1,4 @@
-﻿namespace Form_DSPhong_HoaDon
+﻿namespace QLKSGUI
 {
     partial class Form_HoaDon
     {

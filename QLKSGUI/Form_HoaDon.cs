@@ -1,5 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
-using QLKSDAO;
+using QLKSBUS;
 using QLKSDTO;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Form_DSPhong_HoaDon
+namespace QLKSGUI
 {
     public partial class Form_HoaDon : Form
     {
@@ -30,8 +30,8 @@ namespace Form_DSPhong_HoaDon
 
             foreach (var thue in dsThue)
             {
-                decimal thanhTien = ThueDAO.TinhThanhTien(thue.MaPhong, thue.NgayDat, thue.NgayTra);
-                var phong = PhongDAO.LayThongTinPhong(thue.MaPhong);
+                decimal thanhTien = ThueBUS.TinhThanhTien(thue.MaPhong, thue.NgayDat, thue.NgayTra);
+                var phong = PhongBUS.LayTTPhong(thue.MaPhong);
 
                 ListViewItem item = new ListViewItem(stt.ToString());
                 item.SubItems.Add(thue.MaPhong);
@@ -93,7 +93,10 @@ namespace Form_DSPhong_HoaDon
 
                 try
                 {
-                    HoaDonDAO.ThemHoaDon(hoaDon);
+                    if (HoaDonBUS.ThemHoaDon(hoaDon))
+                    {
+                        throw new Exception();
+                    }
                     MessageBox.Show("Thanh toán thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -122,7 +125,7 @@ namespace Form_DSPhong_HoaDon
                 return;
             }
 
-            var khachHang = ThueDAO.LayThongTinKhachHang(cmnd);
+            var khachHang = KhachHangBUS.LayTTKH(cmnd);
             if (khachHang == null)
             {
                 MessageBox.Show("Không tìm thấy khách hàng với CMND này!", "Thông báo",
@@ -132,7 +135,7 @@ namespace Form_DSPhong_HoaDon
 
             txt_DiaChi.Text = khachHang.DiaChi;
 
-            var dsThue = ThueDAO.LayThueKhachChuaThanhToan(cmnd);
+            var dsThue = ThueBUS.LayDSPKhachChuaThanhToan(cmnd);
             LoadThueToListView(dsThue);
         }
 

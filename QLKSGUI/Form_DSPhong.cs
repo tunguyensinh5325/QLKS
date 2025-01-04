@@ -1,6 +1,5 @@
-﻿using QLKSDAO;
+﻿using QLKSBUS;
 using QLKSDTO;
-using Form_DSPhong_HoaDon;
 
 namespace QLKSGUI
 {
@@ -20,7 +19,7 @@ namespace QLKSGUI
         }
         private void LoadData()
         {
-            dtgv_dsphong.DataSource = PhongDAO.LayDSPhongTrong();
+            dtgv_dsphong.DataSource = PhongBUS.LayDSPhongTrong();
             cbbox_Phong.SelectedIndex = 0;
             btn_TimPhong.Click += btn_TimPhong_Click;
         }
@@ -52,12 +51,12 @@ namespace QLKSGUI
 
             if (selectedItem == "Tất cả")
             {
-                dtgv_dsphong.DataSource = PhongDAO.LayDSPhongTrong();
+                dtgv_dsphong.DataSource = PhongBUS.LayDSPhongTrong();
                 return;
             }
 
             string searchType = "Phòng " + selectedItem.ToLower();
-            dtgv_dsphong.DataSource = PhongDAO.TimPhongTheoLoai(searchType);
+            dtgv_dsphong.DataSource = PhongBUS.TimPhongTheoLoai(searchType);
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
@@ -68,6 +67,23 @@ namespace QLKSGUI
         private void Form_DSPhong_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Thanhtoan_Click(object sender, EventArgs e)
+        {
+            Form_HoaDon hoaDonForm = new Form_HoaDon();
+            hoaDonForm.ShowDialog();
+        }
+
+        private void btn_Baocao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Datphong_Click(object sender, EventArgs e)
+        {
+            //Form_PhieuThuePhong ThuephongForm = new Form_PhieuThuePhong();
+            //ThuephongForm.ShowDialog();
         }
     }
 }

@@ -104,28 +104,6 @@ namespace QLKSDAO
             DataProvider.ExcuteNonQuery(sql, CommandType.Text, parameters);
         }
 
-        public static KhachHang LayThongTinKhachHang(string CMND)
-        {
-            KhachHang khachHang = null;
-            string query = "SELECT * FROM KhachHang WHERE CMND = @CMND";
-
-            SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = new SqlParameter("@CMND", CMND);
-
-            DataTable dt = DataProvider.SelectData(query, CommandType.Text, parameters);
-
-            if (dt.Rows.Count > 0)
-            {
-                khachHang = new KhachHang
-                {
-                    CMND = dt.Rows[0]["CMND"].ToString(),
-                    TenKH = dt.Rows[0]["TenKH"].ToString(),
-                    DiaChi = dt.Rows[0]["DiaChi"].ToString(),
-                    LoaiKH = dt.Rows[0]["LoaiKH"].ToString()
-                };
-            }
-            return khachHang;
-        }
 
         public static decimal TinhThanhTien(string maPhong, DateTime ngayDat, DateTime ngayTra)
         {

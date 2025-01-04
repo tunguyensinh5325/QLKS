@@ -13,7 +13,15 @@ namespace QLKSBUS
         {
             return PhongDAO.LayDSPhong();
         }
-
+        public static List<Phong> LayDSPhongTrong()
+        {
+            return PhongDAO.LayDSPhongTrong();
+        }
+        public static List<Phong> TimPhongTheoLoai(string lp)
+        {
+            return PhongDAO.TimPhongTheoLoai(lp);
+        }
+        
         public static bool ThemPhong(Phong p)
         {
             if (string.IsNullOrEmpty(p.MaPhong) || string.IsNullOrEmpty(p.LoaiPhong))
@@ -32,7 +40,6 @@ namespace QLKSBUS
                 return false;
             }
         }
-
         public static bool XoaPhong(string maPhong)
         {
             if (string.IsNullOrEmpty(maPhong))
@@ -48,7 +55,6 @@ namespace QLKSBUS
                 return false;
             }
         }
-
         public static bool CapNhatPhong(Phong p)
         {
             if (string.IsNullOrEmpty(p.MaPhong) || string.IsNullOrEmpty(p.LoaiPhong))
@@ -66,6 +72,15 @@ namespace QLKSBUS
             {
                 return false;
             }
+        }
+
+        public static Phong LayPhongTheoMa(string mp)
+        {
+            return PhongDAO.LayPhongTheoMa(mp);
+        }
+        public static Phong LayTTPhong(string ttPhong)
+        {
+            return PhongDAO.LayThongTinPhong(ttPhong);
         }
     }
 }

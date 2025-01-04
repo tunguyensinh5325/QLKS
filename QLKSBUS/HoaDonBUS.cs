@@ -19,7 +19,7 @@ namespace QLKSBUS
         }
 
 
-        public bool ThemHoaDon(HoaDon hoaDon)
+        public static bool ThemHoaDon(HoaDon hoaDon)
         {
 
             if (string.IsNullOrEmpty(hoaDon.MaHD) || string.IsNullOrEmpty(hoaDon.MaPhong) || string.IsNullOrEmpty(hoaDon.CMND))
