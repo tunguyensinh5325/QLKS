@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -104,6 +104,87 @@ namespace QLKSDAO
             DataProvider.ExcuteNonQuery(sql, CommandType.Text, parameters);
         }
 
-        
+        public static KhachHang LayThongTinKhachHang(string CMND)
+        {
+            KhachHang khachHang = null;
+            string query = "SELECT * FROM KhachHang WHERE CMND = @CMND";
+
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@CMND", CMND);
+
+            DataTable dt = DataProvider.SelectData(query, CommandType.Text, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                khachHang = new KhachHang
+                {
+                    CMND = dt.Rows[0]["CMND"].ToString(),
+                    TenKH = dt.Rows[0]["TenKH"].ToString(),
+                    DiaChi = dt.Rows[0]["DiaChi"].ToString(),
+                    LoaiKH = dt.Rows[0]["LoaiKH"].ToString()
+                };
+            }
+            return khachHang;
+        }
+
+        public static decimal TinhThanhTien(string maPhong, DateTime ngayDat, DateTime ngayTra)
+        {
+            string query = @"
+        WITH RoomOccupancy AS (
+            SELECT COUNT(*) as OccupantCount,
+                   MAX(CASE WHEN k.LoaiKH = N'Nước ngoài' THEN 1 ELSE 0 END) as HasForeignGuest
+            FROM Thue t
+            INNER JOIN KhachHang k ON t.CMND = k.CMND
+            WHERE t.MaPhong = @MaPhong 
+            AND t.NgayDat = @NgayDat 
+            AND t.NgayTra = @NgayTra
+        )
+        SELECT 
+            p.Gia as BasePrice,
+            p.LoaiPhong,
+            ro.OccupantCount,
+            ro.HasForeignGuest,
+            DATEDIFF(day, @NgayDat, @NgayTra) as SoNgayThue
+        FROM Phong p
+        CROSS JOIN RoomOccupancy ro
+        WHERE p.MaPhong = @MaPhong";
+
+            SqlParameter[] parameters = new SqlParameter[3];
+            parameters[0] = new SqlParameter("@MaPhong", maPhong);
+            parameters[1] = new SqlParameter("@NgayDat", ngayDat);
+            parameters[2] = new SqlParameter("@NgayTra", ngayTra);
+
+            DataTable dt = DataProvider.SelectData(query, CommandType.Text, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                decimal basePrice = Convert.ToDecimal(row["BasePrice"]);
+                int occupantCount = Convert.ToInt32(row["OccupantCount"]);
+                bool hasForeignGuest = Convert.ToBoolean(row["HasForeignGuest"]);
+                string loaiPhong = row["LoaiPhong"].ToString();
+                int soNgayThue = Convert.ToInt32(row["SoNgayThue"]);
+
+                decimal multiplier = 1.0M;
+
+                // Phụ thu vượt số người
+                if ((loaiPhong == "Phòng đơn" && occupantCount > 1) ||
+                    (loaiPhong == "Phòng đôi" && occupantCount > 2) ||
+                    (loaiPhong == "Phòng lớn" && occupantCount > 8))
+                {
+                    multiplier *= 1.25M;
+                }
+
+                // Phụ thu khách nước ngoài
+                if (hasForeignGuest)
+                {
+                    multiplier *= 1.5M;
+                }
+
+                return basePrice * multiplier * soNgayThue;
+            }
+
+            return 0;
+        }
     }
 }

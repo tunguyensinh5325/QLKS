@@ -192,8 +192,31 @@ namespace QLKSDAO
             return p;
         }
 
-        
 
-       
+        public static Phong LayThongTinPhong(string maPhong)
+        {
+            Phong phong = null;
+            string query = "SELECT * FROM Phong WHERE MaPhong = @MaPhong";
+
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@MaPhong", maPhong);
+
+            DataTable dt = DataProvider.SelectData(query, CommandType.Text, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                phong = new Phong
+                {
+                    MaPhong = row["MaPhong"].ToString(),
+                    LoaiPhong = row["LoaiPhong"].ToString(),
+                    TinhTrang = row["TinhTrang"].ToString(),
+                    Gia = Convert.ToInt32(row["Gia"]),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+            }
+            return phong;
+        }
+
     }
 }

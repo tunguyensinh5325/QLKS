@@ -1,5 +1,6 @@
 ﻿using QLKSDAO;
 using QLKSDTO;
+using Form_DSPhong_HoaDon;
 
 namespace QLKSGUI
 {
