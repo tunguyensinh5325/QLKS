@@ -97,7 +97,6 @@ namespace Form_DSPhong_HoaDon
                     MessageBox.Show("Thanh toán thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Refresh the list
                     btn_Tim_Click(sender, e);
                 }
                 catch (Exception ex)
@@ -131,10 +130,8 @@ namespace Form_DSPhong_HoaDon
                 return;
             }
 
-            // Display customer address
             txt_DiaChi.Text = khachHang.DiaChi;
 
-            // Get unpaid rentals
             var dsThue = ThueDAO.LayThueKhachChuaThanhToan(cmnd);
             LoadThueToListView(dsThue);
         }
