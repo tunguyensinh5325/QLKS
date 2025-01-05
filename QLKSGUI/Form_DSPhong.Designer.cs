@@ -80,13 +80,13 @@
             dtgv_dsphong.Name = "dtgv_dsphong";
             dtgv_dsphong.RowHeadersWidth = 62;
             dtgv_dsphong.RowTemplate.Height = 33;
-            dtgv_dsphong.Size = new Size(813, 280);
+            dtgv_dsphong.Size = new Size(839, 280);
             dtgv_dsphong.TabIndex = 4;
             dtgv_dsphong.RowPostPaint += dtgv_dsphong_RowPostPaint;
             // 
             // btn_QuayLai
             // 
-            btn_QuayLai.Location = new Point(763, 478);
+            btn_QuayLai.Location = new Point(789, 478);
             btn_QuayLai.Margin = new Padding(4, 2, 4, 2);
             btn_QuayLai.Name = "btn_QuayLai";
             btn_QuayLai.Size = new Size(134, 34);
@@ -97,7 +97,7 @@
             // 
             // btn_Baocao
             // 
-            btn_Baocao.Location = new Point(537, 478);
+            btn_Baocao.Location = new Point(554, 478);
             btn_Baocao.Margin = new Padding(4, 2, 4, 2);
             btn_Baocao.Name = "btn_Baocao";
             btn_Baocao.Size = new Size(134, 34);
@@ -119,7 +119,7 @@
             // 
             // btn_Thanhtoan
             // 
-            btn_Thanhtoan.Location = new Point(310, 478);
+            btn_Thanhtoan.Location = new Point(319, 478);
             btn_Thanhtoan.Margin = new Padding(4, 2, 4, 2);
             btn_Thanhtoan.Name = "btn_Thanhtoan";
             btn_Thanhtoan.Size = new Size(134, 34);
@@ -132,7 +132,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(952, 532);
+            ClientSize = new Size(973, 532);
             Controls.Add(btn_Thanhtoan);
             Controls.Add(btn_Datphong);
             Controls.Add(btn_Baocao);

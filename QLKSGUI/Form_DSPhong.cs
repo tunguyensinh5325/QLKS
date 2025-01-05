@@ -11,6 +11,7 @@ namespace QLKSGUI
             InitializeComponent();
             LoadData();
             dtgv_dsphong.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dtgv_dsphong_RowPostPaint);
+            dtgv_dsphong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void Form_DSPhong_Load(object sender, EventArgs e)
         {
@@ -82,8 +83,18 @@ namespace QLKSGUI
 
         private void btn_Datphong_Click(object sender, EventArgs e)
         {
-            //Form_PhieuThuePhong ThuephongForm = new Form_PhieuThuePhong();
-            //ThuephongForm.ShowDialog();
+            if (dtgv_dsphong.SelectedRows.Count > 0)
+            {
+                btn_Datphong.Enabled = true;
+                DataGridViewRow selectedRow = dtgv_dsphong.SelectedRows[0];
+                string maPhong = selectedRow.Cells["MaPhong"].Value?.ToString();
+                Form_PhieuThuePhong thuePhongForm = new Form_PhieuThuePhong("P001");
+                thuePhongForm.ShowDialog();
+            }
+            else
+            {
+                btn_Datphong.Enabled = false;
+            }
         }
     }
 }
