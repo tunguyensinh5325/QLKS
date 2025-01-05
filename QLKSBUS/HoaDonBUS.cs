@@ -13,7 +13,7 @@ namespace QLKSBUS
     public class HoaDonBUS
     {
 
-        public List<HoaDon> LayDSHoaDon()
+        public static List<HoaDon> LayDSHoaDon()
         {
             return HoaDonDAO.LayDSHoaDon();
         }
@@ -38,7 +38,7 @@ namespace QLKSBUS
                 return false;
             }
         }
-        public bool XoaHoaDon(string maHD)
+        public static bool XoaHoaDon(string maHD)
         {
             if (string.IsNullOrEmpty(maHD))
             {
@@ -55,7 +55,7 @@ namespace QLKSBUS
                 return false;
             }
         }
-        public bool CapNhatHoaDon(HoaDon hoaDon)
+        public static bool CapNhatHoaDon(HoaDon hoaDon)
         {
             if (string.IsNullOrEmpty(hoaDon.MaHD))
             {

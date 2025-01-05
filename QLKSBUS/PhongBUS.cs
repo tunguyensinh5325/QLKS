@@ -73,7 +73,6 @@ namespace QLKSBUS
                 return false;
             }
         }
-
         public static Phong LayPhongTheoMa(string mp)
         {
             return PhongDAO.LayPhongTheoMa(mp);
@@ -82,5 +81,19 @@ namespace QLKSBUS
         {
             return PhongDAO.LayThongTinPhong(ttPhong);
         }
+        public static void CapNhatTinhTrangPhong(string maPhong, string tinhTrang)
+        {
+          if (!string.IsNullOrEmpty(maPhong) && string.IsNullOrEmpty(tinhTrang))
+            return;
+          try
+          {
+              PhongDAO.CapNhatTinhTrangPhong(maPhong, tinhTrang);
+
+          }
+          catch
+          {
+              return;
+          }
+      }
     }
 }
