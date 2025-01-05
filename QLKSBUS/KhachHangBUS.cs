@@ -30,6 +30,19 @@ namespace QLKSBUS
             }
         }
 
+        public static KhachHang LayKhachHangTheoCMND(string cmnd)
+        {
+            if(string.IsNullOrEmpty(cmnd) || string.IsNullOrEmpty(cmnd) ) {return null;}
+            try
+            {
+               return KhachHangDAO.LayKhachHangTheoCMND(cmnd);
+         
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public static bool XoaKhachHang(string cmnd)
         {
             if (string.IsNullOrEmpty(cmnd))
