@@ -91,16 +91,39 @@ namespace QLKSGUI
                     MaPhong = thue.MaPhong
                 };
 
+                var phong = PhongBUS.LayTTPhong(thue.MaPhong);
+                BaoCao baoCao = new BaoCao
+                {
+                    MaHD = maHD,
+                    MaPhong = thue.MaPhong,
+                    LoaiPhong = phong.LoaiPhong,
+                    SoNgay = (short)(thue.NgayTra - thue.NgayDat).Days,
+                    DoanhThu = Convert.ToInt32(thanhTien)
+                };
+
                 try
                 {
-                    if (HoaDonBUS.ThemHoaDon(hoaDon))
+                    bool hoaDonSuccess = HoaDonBUS.ThemHoaDon(hoaDon);
+                    if (hoaDonSuccess)
                     {
-                        throw new Exception();
-                    }
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bool baoCaoSuccess = BaoCaoBUS.ThemBaoCao(baoCao);
+                        if (baoCaoSuccess)
+                        {
+                            MessageBox.Show("Thanh toán thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    btn_Tim_Click(sender, e);
+                            btn_Tim_Click(sender, e);
+                        }
+                        else
+                        {
+                            HoaDonBUS.XoaHoaDon(maHD);
+                            throw new Exception("Không thể cập nhật báo cáo");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Không thể tạo hóa đơn");
+                    }
                 }
                 catch (Exception ex)
                 {
