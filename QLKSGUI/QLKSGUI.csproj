@@ -19,10 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Form_Baocaodoanhthu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form_Baocaomatdo.cs">
+    <Compile Update="Form_Baocao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form_HoaDon.cs">

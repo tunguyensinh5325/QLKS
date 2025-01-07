@@ -9,7 +9,7 @@ namespace QLKSBUS
 {
   public class PhongBUS
     {
-        public static List<Phong> LayDSPhong()
+        public static List<Phong> DSPhong()
         {
             return PhongDAO.LayDSPhong();
         }
@@ -21,7 +21,19 @@ namespace QLKSBUS
         {
             return PhongDAO.TimPhongTheoLoai(lp);
         }
-        
+        public static List<string> DSlp()
+        {
+            return PhongDAO.LayDSLoaiPhong();
+        }
+        public static List<int> DSmd(string t, string s)
+        {
+            return PhongDAO.LayDSmd(t, s);
+        }
+        public static List<int> DSdt(string t, string s)
+        {
+            return PhongDAO.LayDSdt(t, s);
+        }
+
         public static bool ThemPhong(Phong p)
         {
             if (string.IsNullOrEmpty(p.MaPhong) || string.IsNullOrEmpty(p.LoaiPhong))
@@ -72,10 +84,6 @@ namespace QLKSBUS
             {
                 return false;
             }
-        }
-        public static Phong LayPhongTheoMa(string mp)
-        {
-            return PhongDAO.LayPhongTheoMa(mp);
         }
         public static Phong LayTTPhong(string ttPhong)
         {

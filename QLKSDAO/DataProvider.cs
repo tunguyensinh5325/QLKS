@@ -19,7 +19,7 @@ namespace QLKSDAO
                 return ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             }
         }
-        private static string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True;Trust Server Certificate=True";
+        private static string connectionString = "Data Source=.\\SQLEXPRESS01;Initial Catalog=QLKS;Integrated Security=True;Trust Server Certificate=True";
         public static DataTable TruyVan_LayDuLieu(string sql)
         {
             SqlConnection con = new SqlConnection(connectionString);

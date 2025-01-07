@@ -16,7 +16,6 @@ namespace QLKSDAO
         public static List<Phong> LayDSPhong()
         {
             List<Phong> dsPhong = new List<Phong>();
-
             try
             {
                 DataTable dtPhong = DataProvider.TruyVan_LayDuLieu("SELECT * FROM Phong");
@@ -84,7 +83,47 @@ namespace QLKSDAO
             }
             return dsPhong;
         }
+        public static List<string> LayDSLoaiPhong()
+        {
+            List<Phong> dsp=LayDSPhong();
+            List<string> lp=new List<string>();
+            foreach(Phong p in dsp)
+            {
+                if (!lp.Contains(p.LoaiPhong))
+                {
+                    lp.Add(p.LoaiPhong);
+                }
+            }
+            return lp;
+        }
+        public static List<int> LayDSmd(string t, string n)
+        {
+            List<HoaDon> dshd = HoaDonDAO.LayDSHoaDonTheoThangNam(t, n);
+            List<Phong> dsp = LayDSPhong();
+            List<int> md = Enumerable.Repeat(0, dsp.Count).ToList();
 
+            foreach (HoaDon hd in dshd)
+            {
+                int index = dsp.FindIndex(p => p.MaPhong == hd.MaPhong);
+                md[index] += (hd.NgayTra - hd.NgayDat).Days;
+            }
+
+            return md;
+
+        }
+        public static List<int> LayDSdt(string t, string n)
+        {
+            List<HoaDon> dshd = HoaDonDAO.LayDSHoaDonTheoThangNam(t, n);
+            List<string> dslp = LayDSLoaiPhong();
+            List<int> dt = Enumerable.Repeat(0, dslp.Count).ToList();
+            foreach (HoaDon hd in dshd)
+            {
+                Phong p = LayThongTinPhong(hd.MaPhong);
+                int index = dslp.IndexOf(p.LoaiPhong);
+                dt[index] += hd.ThanhTien;
+            }
+            return dt;
+        }
         public static void CapNhatTinhTrangPhong(string maPhong, string tinhTrang)
         {
             string sql = @"UPDATE Phong SET TinhTrang = @TinhTrang WHERE MaPhong = @MaPhong";
@@ -157,41 +196,6 @@ namespace QLKSDAO
                 Console.WriteLine("Lỗi khi cập nhật phòng: " + ex.Message);
             }
         }
-
-        public static Phong LayPhongTheoMa(string maPhong)
-        {
-            Phong p = null;
-
-            string sql = "SELECT * FROM Phong WHERE MaPhong = @MaPhong";
-
-            SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = new SqlParameter("@MaPhong", maPhong);
-
-            try
-            {
-                DataTable dtPhong = DataProvider.SelectData(sql, CommandType.Text, parameters);
-
-                if (dtPhong.Rows.Count > 0)
-                {
-                    DataRow row = dtPhong.Rows[0];
-                    p = new Phong
-                    {
-                        MaPhong = row["MaPhong"].ToString(),
-                        LoaiPhong = row["LoaiPhong"].ToString(),
-                        TinhTrang = row["TinhTrang"].ToString(),
-                        Gia = Convert.ToInt32(row["Gia"]),
-                        GhiChu = row["GhiChu"].ToString()
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi lấy thông tin phòng: " + ex.Message);
-            }
-
-            return p;
-        }
-
 
         public static Phong LayThongTinPhong(string maPhong)
         {

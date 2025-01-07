@@ -38,6 +38,43 @@ namespace QLKSDAO
 
             return dshoaDon;
         }
+        public static List<HoaDon> LayDSHoaDonTheoThangNam(string t, string n)
+        {
+            List<HoaDon> kq=new List<HoaDon>();
+            string sql;
+            SqlParameter[] parameters ;
+            if (t == "")
+            {
+                sql = "select * from HoaDon where year(NgayDat)=@Nam";
+                parameters = new SqlParameter[1];
+                parameters[0] = new SqlParameter("@Nam", n);
+            }
+            else
+            {
+                sql = "select * from HoaDon where month(NgayDat)=@Thang and year(NgayDat)=@Nam";
+                parameters = new SqlParameter[2];
+                parameters[0] = new SqlParameter("@Thang",t);
+                parameters[1] = new SqlParameter("@Nam",n);
+            }
+            DataTable dtHoaDon = DataProvider.SelectData(sql,CommandType.Text,parameters);
+            foreach (DataRow row in dtHoaDon.Rows)
+            {
+                HoaDon hd = new HoaDon
+                {
+
+                    MaHD = row["MaHD"].ToString(),
+                    ThanhTien = Convert.ToInt32(row["ThanhTien"]),
+                    NgayDat = DateTime.Parse(row["NgayDat"].ToString()),
+                    NgayTra = DateTime.Parse(row["NgayTra"].ToString()),
+                    CMND = row["CMND"].ToString(),
+                    MaPhong = row["MaPhong"].ToString(),
+                };
+                kq.Add(hd);
+            }
+
+
+            return kq;
+        }
         public static void ThemHoaDon(HoaDon hoaDon)
         {
             string sql = @"INSERT INTO HoaDon (MaHD, ThanhTien, NgayDat, NgayTra, CMND, MaPhong) VALUES (@MaHD, @ThanhTien, @NgayDat, @NgayTra, @CMND, @MaPhong)";
@@ -69,33 +106,7 @@ namespace QLKSDAO
             parameters[5] = new SqlParameter("@MaPhong", hoaDon.MaPhong);
             DataProvider.ExcuteNonQuery(sql, CommandType.Text, parameters);
         }
-        public static List<HoaDon> LayHoaDonTheoMaHD(string maHD)
-        {
-            List<HoaDon> dsHoaDon = new List<HoaDon>();
-            SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0] = new SqlParameter("@MaHD", maHD);
-            DataTable dtHoaDon = DataProvider.SelectData(
-            "SELECT * FROM HoaDon WHERE MaHD = @MaHD",
-             CommandType.Text,
-             parameters
-             );
-
-            foreach (DataRow row in dtHoaDon.Rows)
-            {
-                HoaDon hd = new HoaDon
-                {
-
-                    MaHD = row["MaHD"].ToString(),
-                    ThanhTien = Convert.ToInt32(row["ThanhTien"]),
-                    NgayDat = DateTime.Parse(row["NgayDat"].ToString()),
-                    NgayTra = DateTime.Parse(row["NgayTra"].ToString()),
-                    CMND = row["CMND"].ToString(),
-                    MaPhong = row["MaPhong"].ToString(),
-                };
-                dsHoaDon.Add(hd);
-            }
-            return dsHoaDon;
-        }
+        
     }
 }
 
