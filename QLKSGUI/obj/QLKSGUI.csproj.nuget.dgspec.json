@@ -1,0 +1,325 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj",
+        "projectName": "QLKSBUS",
+        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj",
+        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj": {
+                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj"
+              },
+              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj",
+        "projectName": "QLKSDAO",
+        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj",
+        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj",
+        "projectName": "QLKSDTO",
+        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj",
+        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj",
+        "projectName": "QLKSGUI",
+        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj",
+        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj": {
+                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj"
+              },
+              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
