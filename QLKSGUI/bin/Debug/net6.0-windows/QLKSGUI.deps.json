@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "QLKSGUI/1.0.0": {
         "dependencies": {
-          "Azure.Core": "1.38.0",
           "Microsoft.Data.SqlClient": "5.2.2",
           "QLKSBUS": "1.0.0",
           "QLKSDTO": "1.0.0",
@@ -364,7 +363,6 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "QLKSBUS/1.0.0": {
         "dependencies": {
-          "Azure.Core": "1.38.0",
           "Microsoft.Data.SqlClient": "5.2.2",
           "QLKSDAO": "1.0.0",
           "QLKSDTO": "1.0.0",
@@ -379,7 +377,6 @@
       },
       "QLKSDAO/1.0.0": {
         "dependencies": {
-          "Azure.Core": "1.38.0",
           "Microsoft.Data.SqlClient": "5.2.2",
           "QLKSDTO": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.0"
@@ -393,7 +390,6 @@
       },
       "QLKSDTO/1.0.0": {
         "dependencies": {
-          "Azure.Core": "1.38.0",
           "Microsoft.Data.SqlClient": "5.2.2",
           "System.Configuration.ConfigurationManager": "9.0.0"
         },
