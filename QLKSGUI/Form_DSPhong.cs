@@ -60,10 +60,6 @@ namespace QLKSGUI
             dtgv_dsphong.DataSource = PhongBUS.TimPhongTheoLoai(searchType);
         }
 
-        private void btn_QuayLai_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void Form_DSPhong_Load_1(object sender, EventArgs e)
         {
@@ -86,7 +82,15 @@ namespace QLKSGUI
         {
             Form_PhieuThuePhong thuePhongForm = new Form_PhieuThuePhong();
             thuePhongForm.ShowDialog();
-            
+
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -229,6 +229,7 @@
             btn_QuayLai.TabIndex = 36;
             btn_QuayLai.Text = "Quay Lại";
             btn_QuayLai.UseVisualStyleBackColor = true;
+            btn_QuayLai.Click += btn_QuayLai_Click;
             // 
             // btn_Tim
             // 

@@ -32,7 +32,7 @@
             btn_TimPhong = new Button();
             cbbox_Phong = new ComboBox();
             dtgv_dsphong = new DataGridView();
-            btn_QuayLai = new Button();
+            btn_Thoat = new Button();
             btn_Baocao = new Button();
             btn_Datphong = new Button();
             btn_Thanhtoan = new Button();
@@ -102,17 +102,17 @@
             dtgv_dsphong.TabIndex = 4;
             dtgv_dsphong.RowPostPaint += dtgv_dsphong_RowPostPaint;
             // 
-            // btn_QuayLai
+            // btn_Thoat
             // 
-            btn_QuayLai.Dock = DockStyle.Fill;
-            btn_QuayLai.Location = new Point(727, 2);
-            btn_QuayLai.Margin = new Padding(4, 2, 4, 2);
-            btn_QuayLai.Name = "btn_QuayLai";
-            btn_QuayLai.Size = new Size(236, 45);
-            btn_QuayLai.TabIndex = 5;
-            btn_QuayLai.Text = "Quay Lại";
-            btn_QuayLai.UseVisualStyleBackColor = true;
-            btn_QuayLai.Click += btn_QuayLai_Click;
+            btn_Thoat.Dock = DockStyle.Fill;
+            btn_Thoat.Location = new Point(727, 2);
+            btn_Thoat.Margin = new Padding(4, 2, 4, 2);
+            btn_Thoat.Name = "btn_Thoat";
+            btn_Thoat.Size = new Size(236, 45);
+            btn_Thoat.TabIndex = 5;
+            btn_Thoat.Text = "Thoát";
+            btn_Thoat.UseVisualStyleBackColor = true;
+            btn_Thoat.Click += btn_Thoat_Click;
             // 
             // btn_Baocao
             // 
@@ -201,7 +201,7 @@
             tableLayoutPanel2.Controls.Add(btn_Datphong, 0, 0);
             tableLayoutPanel2.Controls.Add(btn_Thanhtoan, 1, 0);
             tableLayoutPanel2.Controls.Add(btn_Baocao, 2, 0);
-            tableLayoutPanel2.Controls.Add(btn_QuayLai, 3, 0);
+            tableLayoutPanel2.Controls.Add(btn_Thoat, 3, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 480);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -256,7 +256,7 @@
         private Button btn_TimPhong;
         private ComboBox cbbox_Phong;
         private DataGridView dtgv_dsphong;
-        private Button btn_QuayLai;
+        private Button btn_Thoat;
         private Button btn_Baocao;
         private Button btn_Datphong;
         private Button btn_Thanhtoan;
