@@ -36,37 +36,52 @@
             btn_Baocao = new Button();
             btn_Datphong = new Button();
             btn_Thanhtoan = new Button();
+            tblp_DSPhong = new TableLayoutPanel();
+            tblp_input = new TableLayoutPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanel3 = new TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).BeginInit();
+            tblp_DSPhong.SuspendLayout();
+            tblp_input.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // lb_DanhSachPhong
             // 
             lb_DanhSachPhong.AutoSize = true;
+            lb_DanhSachPhong.Dock = DockStyle.Top;
             lb_DanhSachPhong.Font = new Font("Times New Roman", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            lb_DanhSachPhong.Location = new Point(363, 9);
+            lb_DanhSachPhong.Location = new Point(4, 0);
             lb_DanhSachPhong.Margin = new Padding(4, 0, 4, 0);
             lb_DanhSachPhong.Name = "lb_DanhSachPhong";
-            lb_DanhSachPhong.Size = new Size(260, 36);
+            lb_DanhSachPhong.Size = new Size(959, 36);
             lb_DanhSachPhong.TabIndex = 0;
             lb_DanhSachPhong.Text = "Danh Sách Phòng";
+            lb_DanhSachPhong.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btn_TimPhong
             // 
-            btn_TimPhong.Location = new Point(84, 114);
+            btn_TimPhong.Dock = DockStyle.Right;
+            btn_TimPhong.Location = new Point(4, 2);
             btn_TimPhong.Margin = new Padding(4, 2, 4, 2);
             btn_TimPhong.Name = "btn_TimPhong";
-            btn_TimPhong.Size = new Size(134, 36);
+            btn_TimPhong.Size = new Size(123, 43);
             btn_TimPhong.TabIndex = 2;
             btn_TimPhong.Text = "Tìm Phòng";
+            btn_TimPhong.TextAlign = ContentAlignment.TopCenter;
             btn_TimPhong.UseVisualStyleBackColor = true;
             btn_TimPhong.Click += btn_TimPhong_Click;
             // 
             // cbbox_Phong
             // 
+            cbbox_Phong.Dock = DockStyle.Left;
             cbbox_Phong.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbox_Phong.FormattingEnabled = true;
             cbbox_Phong.Items.AddRange(new object[] { "Tất cả", "Đơn", "Đôi", "Lớn" });
-            cbbox_Phong.Location = new Point(226, 115);
+            cbbox_Phong.Location = new Point(135, 2);
             cbbox_Phong.Margin = new Padding(4, 2, 4, 2);
             cbbox_Phong.Name = "cbbox_Phong";
             cbbox_Phong.Size = new Size(218, 33);
@@ -74,22 +89,26 @@
             // 
             // dtgv_dsphong
             // 
+            dtgv_dsphong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_dsphong.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dtgv_dsphong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgv_dsphong.Location = new Point(84, 182);
+            dtgv_dsphong.Dock = DockStyle.Fill;
+            dtgv_dsphong.Location = new Point(4, 2);
             dtgv_dsphong.Margin = new Padding(4, 2, 4, 2);
             dtgv_dsphong.Name = "dtgv_dsphong";
             dtgv_dsphong.RowHeadersWidth = 62;
             dtgv_dsphong.RowTemplate.Height = 33;
-            dtgv_dsphong.Size = new Size(839, 280);
+            dtgv_dsphong.Size = new Size(959, 335);
             dtgv_dsphong.TabIndex = 4;
             dtgv_dsphong.RowPostPaint += dtgv_dsphong_RowPostPaint;
             // 
             // btn_QuayLai
             // 
-            btn_QuayLai.Location = new Point(789, 478);
+            btn_QuayLai.Dock = DockStyle.Fill;
+            btn_QuayLai.Location = new Point(727, 2);
             btn_QuayLai.Margin = new Padding(4, 2, 4, 2);
             btn_QuayLai.Name = "btn_QuayLai";
-            btn_QuayLai.Size = new Size(134, 34);
+            btn_QuayLai.Size = new Size(236, 45);
             btn_QuayLai.TabIndex = 5;
             btn_QuayLai.Text = "Quay Lại";
             btn_QuayLai.UseVisualStyleBackColor = true;
@@ -97,10 +116,11 @@
             // 
             // btn_Baocao
             // 
-            btn_Baocao.Location = new Point(554, 478);
+            btn_Baocao.Dock = DockStyle.Fill;
+            btn_Baocao.Location = new Point(486, 2);
             btn_Baocao.Margin = new Padding(4, 2, 4, 2);
             btn_Baocao.Name = "btn_Baocao";
-            btn_Baocao.Size = new Size(134, 34);
+            btn_Baocao.Size = new Size(233, 45);
             btn_Baocao.TabIndex = 6;
             btn_Baocao.Text = "Báo cáo";
             btn_Baocao.UseVisualStyleBackColor = true;
@@ -108,10 +128,11 @@
             // 
             // btn_Datphong
             // 
-            btn_Datphong.Location = new Point(84, 478);
+            btn_Datphong.Dock = DockStyle.Fill;
+            btn_Datphong.Location = new Point(4, 2);
             btn_Datphong.Margin = new Padding(4, 2, 4, 2);
             btn_Datphong.Name = "btn_Datphong";
-            btn_Datphong.Size = new Size(134, 34);
+            btn_Datphong.Size = new Size(233, 45);
             btn_Datphong.TabIndex = 7;
             btn_Datphong.Text = "Đặt Phòng";
             btn_Datphong.UseVisualStyleBackColor = true;
@@ -119,36 +140,114 @@
             // 
             // btn_Thanhtoan
             // 
-            btn_Thanhtoan.Location = new Point(319, 478);
+            btn_Thanhtoan.Dock = DockStyle.Fill;
+            btn_Thanhtoan.Location = new Point(245, 2);
             btn_Thanhtoan.Margin = new Padding(4, 2, 4, 2);
             btn_Thanhtoan.Name = "btn_Thanhtoan";
-            btn_Thanhtoan.Size = new Size(134, 34);
+            btn_Thanhtoan.Size = new Size(233, 45);
             btn_Thanhtoan.TabIndex = 8;
             btn_Thanhtoan.Text = "Thanh toán";
             btn_Thanhtoan.UseVisualStyleBackColor = true;
             btn_Thanhtoan.Click += btn_Thanhtoan_Click;
+            // 
+            // tblp_DSPhong
+            // 
+            tblp_DSPhong.ColumnCount = 1;
+            tblp_DSPhong.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_DSPhong.Controls.Add(lb_DanhSachPhong, 0, 0);
+            tblp_DSPhong.Dock = DockStyle.Fill;
+            tblp_DSPhong.Location = new Point(3, 3);
+            tblp_DSPhong.Name = "tblp_DSPhong";
+            tblp_DSPhong.RowCount = 1;
+            tblp_DSPhong.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_DSPhong.Size = new Size(967, 73);
+            tblp_DSPhong.TabIndex = 9;
+            // 
+            // tblp_input
+            // 
+            tblp_input.ColumnCount = 2;
+            tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.5470524F));
+            tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 86.45295F));
+            tblp_input.Controls.Add(btn_TimPhong, 0, 0);
+            tblp_input.Controls.Add(cbbox_Phong, 1, 0);
+            tblp_input.Dock = DockStyle.Fill;
+            tblp_input.Location = new Point(3, 82);
+            tblp_input.Name = "tblp_input";
+            tblp_input.RowCount = 1;
+            tblp_input.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tblp_input.Size = new Size(967, 47);
+            tblp_input.TabIndex = 10;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(dtgv_dsphong, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(3, 135);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(967, 339);
+            tableLayoutPanel1.TabIndex = 11;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 4;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.Controls.Add(btn_Datphong, 0, 0);
+            tableLayoutPanel2.Controls.Add(btn_Thanhtoan, 1, 0);
+            tableLayoutPanel2.Controls.Add(btn_Baocao, 2, 0);
+            tableLayoutPanel2.Controls.Add(btn_QuayLai, 3, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 480);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(967, 49);
+            tableLayoutPanel2.TabIndex = 12;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Controls.Add(tblp_DSPhong, 0, 0);
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel2, 0, 3);
+            tableLayoutPanel3.Controls.Add(tblp_input, 0, 1);
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel1, 0, 2);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(0, 0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 4;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 65F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel3.Size = new Size(973, 532);
+            tableLayoutPanel3.TabIndex = 13;
             // 
             // Form_DSPhong
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(973, 532);
-            Controls.Add(btn_Thanhtoan);
-            Controls.Add(btn_Datphong);
-            Controls.Add(btn_Baocao);
-            Controls.Add(btn_QuayLai);
-            Controls.Add(dtgv_dsphong);
-            Controls.Add(cbbox_Phong);
-            Controls.Add(btn_TimPhong);
-            Controls.Add(lb_DanhSachPhong);
+            Controls.Add(tableLayoutPanel3);
             Font = new Font("Times New Roman", 11F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 2, 4, 2);
             Name = "Form_DSPhong";
             Text = "Danh Sách Phòng";
             Load += Form_DSPhong_Load_1;
             ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).EndInit();
+            tblp_DSPhong.ResumeLayout(false);
+            tblp_DSPhong.PerformLayout();
+            tblp_input.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -161,5 +260,10 @@
         private Button btn_Baocao;
         private Button btn_Datphong;
         private Button btn_Thanhtoan;
+        private TableLayoutPanel tblp_DSPhong;
+        private TableLayoutPanel tblp_input;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
     }
 }
