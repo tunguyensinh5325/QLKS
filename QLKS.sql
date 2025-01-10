@@ -27,33 +27,24 @@ create table Thue(
 	NgayDat datetime,
 	NgayTra datetime,
 	FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong),
-    FOREIGN KEY (CMND) REFERENCES KhachHang(CMND)
+    FOREIGN KEY (CMND) REFERENCES KhachHang(CMND),
+	primary key(MaPhong, CMND, NgayDat)
 )
 go
 
 create table HoaDon(
-	MaHD varchar(20) primary key, --(MaPhong-ngày đặt)
+	MaHD varchar(20) primary key, -- (MaPhong-ngày đặt)
 	ThanhTien int,
 	NgayDat datetime,
 	NgayTra datetime,
 	CMND char(15), -- Chủ phòng (chọn người thanh toán làm chủ)
 	MaPhong char(5), 
 	FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong),
-    FOREIGN KEY (CMND) REFERENCES KhachHang(CMND)
-)
+    FOREIGN KEY (CMND) REFERENCES KhachHang(CMND),
+	foreign key (MaPhong, CMND, NgayDat) references Thue(MaPhong, CMND, NgayDat)
 go
 
-create table BaoCao(
-	MaHD varchar(20),
-	MaPhong char(5),
-	LoaiPhong nvarchar(20),
-	SoNgay smallint,
-	DoanhThu int,
-	FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong),
-    FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD),
-	primary key (MaPhong, MaHD)
-)
-go
+
 INSERT INTO Phong (MaPhong, LoaiPhong, TinhTrang, Gia, GhiChu)
 VALUES 
 ('P001', N'Phòng lớn', N'Đã thuê', 200000, N'Có ban công'),
@@ -108,14 +99,11 @@ VALUES
 ('P001-240601', 600000, '2024-06-01', '2024-06-04', '123456789', 'P001'),
 ('P003-240612', 900000, '2024-06-12', '2024-06-15', '123456789', 'P003')
 
-INSERT INTO BaoCao (MaHD, MaPhong, LoaiPhong, SoNgay, DoanhThu)
-VALUES 
-('P001-240601', 'P001', N'Phòng lớn', 3, 600000),
-('P003-240612', 'P003', N'Phòng lớn', 3, 900000);
+
 
 select * from Phong
 select * from KhachHang
 select * from Thue
 select * from HoaDon
-select * from BaoCao
+
 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj": {}
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj",
         "projectName": "QLKSBUS",
-        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj",
-        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj": {
-                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj"
               },
-              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }
@@ -50,7 +50,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -81,24 +82,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj",
         "projectName": "QLKSDAO",
-        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\QLKSDAO.csproj",
-        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDAO\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }
@@ -128,7 +129,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -159,24 +161,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj",
         "projectName": "QLKSDTO",
-        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj",
-        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -202,7 +204,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -233,24 +236,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
         "projectName": "QLKSGUI",
-        "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\QLKSGUI.csproj",
-        "packagesPath": "C:\\Users\\DANG PHUOC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSGUI\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DANG PHUOC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -265,11 +268,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj": {
-                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSBUS\\QLKSBUS.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj"
               },
-              "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "C:\\Users\\DANG PHUOC\\Downloads\\QLKS-master\\QLKS-master\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }
@@ -283,7 +286,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0-windows7.0": {
@@ -317,7 +321,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
