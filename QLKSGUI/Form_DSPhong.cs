@@ -63,7 +63,11 @@ namespace QLKSGUI
                 Font = new Font("Arial", 12, FontStyle.Bold),
                 Cursor = Cursors.Hand
             };
-            closeBtn.Click += (s, e) => HideTenantPanel(); // Gắn sự kiện đóng panel
+            closeBtn.Click += (s, e) =>
+            {
+                tenantPanel.Visible = false;
+                overlayPanel.Visible = false;
+            }; 
 
             // Tiêu đề của panel
             Label titleLabel = new Label
@@ -82,23 +86,14 @@ namespace QLKSGUI
             this.Controls.Add(tenantPanel);
 
             // Sự kiện click vào overlayPanel sẽ đóng tenantPanel
-            overlayPanel.Click += (s, e) => HideTenantPanel();
-
-            // Thiết lập phím tắt Escape để đóng panel
-            this.KeyPreview = true;
-            this.KeyDown += (s, e) =>
+            overlayPanel.Click += (s, e) =>
             {
-                if (e.KeyCode == Keys.Escape && tenantPanel.Visible)
-                    HideTenantPanel();
+                tenantPanel.Visible = false;
+                overlayPanel.Visible = false;
             };
         }
 
-        private void HideTenantPanel()
-        {
-            // Ẩn panel hiển thị danh sách khách hàng thuê và lớp phủ
-            tenantPanel.Visible = false;
-            overlayPanel.Visible = false;
-        }
+        
 
         private void Form_DSPhong_Load(object sender, EventArgs e)
         {
