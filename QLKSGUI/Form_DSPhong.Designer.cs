@@ -252,7 +252,7 @@
             Margin = new Padding(4, 2, 4, 2);
             Name = "Form_DSPhong";
             Text = "Danh Sách Phòng";
-            Load += Form_DSPhong_Load_1;
+            Load += Form_DSPhong_Load;
             ((System.ComponentModel.ISupportInitialize)dtgv_dsphong).EndInit();
             tblp_DSPhong.ResumeLayout(false);
             tblp_DSPhong.PerformLayout();
