@@ -38,6 +38,7 @@ namespace QLKSGUI
 
         private void Form_PhieuThuePhong_Load(object sender, EventArgs e)
         {
+            liv_KhachHang_Resize(sender, e);
             dtp_NgayThue.MinDate = DateTime.Now;
             LoadPhongTrong();
 
@@ -435,6 +436,17 @@ namespace QLKSGUI
                 MessageBox.Show($"Phòng {loaiPhong} chỉ chứa được tối đa {soNguoiToiDa} người.\n" +
                                 "Vui lòng xóa bớt người trong danh sách bằng cách chọn người và nhấn nút Xóa.",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            private void liv_KhachHang_Resize(object sender, EventArgs e)
+            {
+    
+                int widthCot = liv_KhachHang.ClientSize.Width / 9;
+                liv_KhachHang.Columns[0].Width = widthCot;
+
+                for (int i = 1; i < liv_KhachHang.Columns.Count; i++)
+                {
+                    liv_KhachHang.Columns[i].Width = widthCot*2;
+                }
             }
         }
 
