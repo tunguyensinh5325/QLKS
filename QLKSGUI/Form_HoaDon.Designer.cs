@@ -111,7 +111,7 @@
             // 
             lv_HoaDonThanhToan.Columns.AddRange(new ColumnHeader[] { cl_stt, cl_Phong, cl_SoNgayThue, cl_DonGia, cl_ThanhTien });
             lv_HoaDonThanhToan.Dock = DockStyle.Fill;
-            lv_HoaDonThanhToan.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lv_HoaDonThanhToan.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lv_HoaDonThanhToan.FullRowSelect = true;
             lv_HoaDonThanhToan.GridLines = true;
             lv_HoaDonThanhToan.Location = new Point(4, 227);
@@ -185,12 +185,12 @@
             // 
             lb_KhachHang.AutoSize = true;
             lb_KhachHang.Dock = DockStyle.Right;
-            lb_KhachHang.Location = new Point(147, 0);
+            lb_KhachHang.Location = new Point(236, 0);
             lb_KhachHang.Margin = new Padding(4, 0, 4, 0);
             lb_KhachHang.Name = "lb_KhachHang";
-            lb_KhachHang.Size = new Size(216, 58);
+            lb_KhachHang.Size = new Size(127, 58);
             lb_KhachHang.TabIndex = 29;
-            lb_KhachHang.Text = "Khách hàng/Cơ quan";
+            lb_KhachHang.Text = "Khách hàng";
             // 
             // tblp_lvHoaDon
             // 
