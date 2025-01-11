@@ -429,13 +429,14 @@ namespace QLKSGUI
             var selectedItem = (ComboBoxItem)cbb_Phong.SelectedItem;
             string loaiPhong = selectedItem.LoaiPhong;
 
-            int soNguoiToiDa = loaiPhong == "Phòng đơn" ? 1 : (loaiPhong == "Phòng đôi" ? 2 : int.MaxValue);
+            int soNguoiToiDa = loaiPhong == "Phòng đơn" ? 2 : (loaiPhong == "Phòng đôi" ? 4 : int.MaxValue);
 
             if (liv_KhachHang.Items.Count > soNguoiToiDa)
             {
                 MessageBox.Show($"Phòng {loaiPhong} chỉ chứa được tối đa {soNguoiToiDa} người.\n" +
                                 "Vui lòng xóa bớt người trong danh sách bằng cách chọn người và nhấn nút Xóa.",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             private void liv_KhachHang_Resize(object sender, EventArgs e)
             {
@@ -452,4 +453,3 @@ namespace QLKSGUI
 
     }
 
-}
