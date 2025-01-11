@@ -84,6 +84,38 @@ namespace QLKSGUI
             tenantPanel.Visible = false;
             overlayPanel.Visible = false;
         }
+        private void FormatDataGridColumns()
+        {
+            if (dtgv_dsphong.Columns.Contains("MaPhong"))
+                dtgv_dsphong.Columns["MaPhong"].HeaderText = "Mã Phòng";
+
+            if (dtgv_dsphong.Columns.Contains("LoaiPhong"))
+                dtgv_dsphong.Columns["LoaiPhong"].HeaderText = "Loại Phòng";
+
+            if (dtgv_dsphong.Columns.Contains("TinhTrang"))
+                dtgv_dsphong.Columns["TinhTrang"].HeaderText = "Tình Trạng";
+
+            if (dtgv_dsphong.Columns.Contains("Gia"))
+                dtgv_dsphong.Columns["Gia"].HeaderText = "Giá";
+
+            if (dtgv_dsphong.Columns.Contains("GhiChu"))
+                dtgv_dsphong.Columns["GhiChu"].HeaderText = "Ghi Chú";
+
+            if (tenantGrid.Columns.Contains("MaKH"))
+                tenantGrid.Columns["MaKH"].HeaderText = "Mã Khách Hàng";
+
+            if (tenantGrid.Columns.Contains("TenKH"))
+                tenantGrid.Columns["TenKH"].HeaderText = "Tên Khách Hàng";
+
+            if (tenantGrid.Columns.Contains("CMND"))
+                tenantGrid.Columns["CMND"].HeaderText = "CMND";
+
+            if (tenantGrid.Columns.Contains("DiaChi"))
+                tenantGrid.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+
+            if (tenantGrid.Columns.Contains("SDT"))
+                tenantGrid.Columns["SDT"].HeaderText = "Số Điện Thoại";
+        }
         private void Form_DSPhong_Load(object sender, EventArgs e)
         {
             dtgv_dsphong.TopLeftHeaderCell.Value = "STT";
@@ -95,6 +127,7 @@ namespace QLKSGUI
             cbbox_Phong.SelectedIndex = 0;
             cbb_TinhTrang.SelectedIndex = 0;
             btn_TimPhong.Click += btn_TimPhong_Click;
+            FormatDataGridColumns();
         }
         private void dtgv_dsphong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -104,6 +137,7 @@ namespace QLKSGUI
             var tenants = KhachHangDAO.LayDSKhachHangDangThueCuaPhong(maPhong);
 
             tenantGrid.DataSource = tenants;
+            FormatDataGridColumns();
 
             tenantPanel.Location = new Point(
                 (this.ClientSize.Width - tenantPanel.Width) / 2,
