@@ -265,6 +265,7 @@
             btn_ThanhToan.TabIndex = 35;
             btn_ThanhToan.Text = "Thanh Toán";
             btn_ThanhToan.UseVisualStyleBackColor = true;
+            btn_ThanhToan.Click += btn_ThanhToan_Click;
             // 
             // btn_reset
             // 

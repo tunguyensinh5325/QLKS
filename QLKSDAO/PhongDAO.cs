@@ -153,7 +153,7 @@ namespace QLKSDAO
                 Console.WriteLine("Lỗi khi thêm phòng: " + ex.Message);
             }
         }
-
+        
         public static void XoaPhong(string maPhong)
         {
             string sql = "DELETE FROM Phong WHERE MaPhong = @MaPhong";

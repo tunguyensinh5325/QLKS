@@ -30,6 +30,7 @@ namespace QLKSGUI
         private int currentImageIndex = 0;
         private int waitTime = 1000;
         private DateTime lastChangeTime = DateTime.Now;
+        
 
         public Form_PhieuThuePhong()
         {
@@ -40,6 +41,7 @@ namespace QLKSGUI
         {
             liv_KhachHang_Resize(sender, e);
             dtp_NgayThue.MinDate = DateTime.Now;
+            dtp_NgayTra.MinDate = DateTime.Now.AddDays(1);
             LoadPhongTrong();
 
             string[] imagePaths = { "pic/h4.jpg", "pic/h3.jpg", "pic/h2.jpg", "pic/h1.jpg" };
@@ -239,13 +241,13 @@ namespace QLKSGUI
                 return;
             }
             string maPhong = cbb_Phong.SelectedItem.ToString().Split(',')[0].Trim();
-            
+
             if (liv_KhachHang.Items.Count == 0)
             {
                 MessageBox.Show("Không có khách hàng nào trong danh sách.");
                 return;
             }
-            
+
 
             foreach (ListViewItem item in liv_KhachHang.Items)
             {
@@ -269,13 +271,14 @@ namespace QLKSGUI
             string cmndNguoiDauTien = nguoiDauTien.SubItems[cl_CMND.Index].Text;
 
             DateTime ngayDat = dtp_NgayThue.Value;
+            DateTime ngaytra = dtp_NgayTra.Value;
 
             Thue thue = new Thue
             {
                 MaPhong = maPhong,
                 CMND = cmndNguoiDauTien,
                 NgayDat = ngayDat,
-                NgayTra = DateTime.MinValue 
+                NgayTra = ngaytra
             };
             ThueBUS.ThemThue(thue);
 
@@ -285,7 +288,7 @@ namespace QLKSGUI
 
             XoaPhongKhoiComboBox(maPhong);
 
-            MessageBox.Show("Phiếu đã được xuất thành công.");
+            MessageBox.Show("Đã thuê thành công.");
         }
 
         private void XoaPhongKhoiComboBox(string maPhong)
@@ -304,11 +307,11 @@ namespace QLKSGUI
         public static KhachHang SaiKHCoSan(KhachHang kh)
         {
             KhachHang check = KhachHangBUS.LayKhachHangTheoCMND(kh.CMND);
-            if (check==null)
+            if (check == null)
             {
                 return kh;
             }
-            if (check.LoaiKH != kh.LoaiKH || kh.DiaChi!=check.DiaChi || kh.TenKH!=check.TenKH)
+            if (check.LoaiKH != kh.LoaiKH || kh.DiaChi != check.DiaChi || kh.TenKH != check.TenKH)
             {
                 DialogResult result = MessageBox.Show(
                 $"Thông tin của bạn đã tồn tại với Tên: {check.TenKH}, Địa chỉ: {check.DiaChi}, Loại Khách Hàng: {check.LoaiKH}\n" +
@@ -318,7 +321,7 @@ namespace QLKSGUI
                 );
                 if (result == DialogResult.Yes)
                 {
-                    KhachHangBUS.CapNhatKhachHang(kh);                
+                    KhachHangBUS.CapNhatKhachHang(kh);
                 }
                 else if (result == DialogResult.No)
                 {
@@ -344,12 +347,8 @@ namespace QLKSGUI
                     MessageBox.Show("Tên và CMND không được để trống.");
                     return;
                 }
-                if (cbb_Phong.SelectedItem == null)
-                {
-                    MessageBox.Show("Bạn chưa chọn loại phòng!");
-                    return;
-                }
-                
+
+
                 int sttMoi = liv_KhachHang.Items.Count + 1;
                 KhachHang khachHang = new KhachHang
                 {
@@ -360,12 +359,12 @@ namespace QLKSGUI
                 };
 
                 khachHang = SaiKHCoSan(khachHang);
-                
-                ListViewItem item = new ListViewItem(sttMoi.ToString()); 
-                item.SubItems.Add(khachHang.TenKH);                     
-                item.SubItems.Add(khachHang.LoaiKH);                    
-                item.SubItems.Add(khachHang.CMND);                      
-                item.SubItems.Add(khachHang.DiaChi);                    
+
+                ListViewItem item = new ListViewItem(sttMoi.ToString());
+                item.SubItems.Add(khachHang.TenKH);
+                item.SubItems.Add(khachHang.LoaiKH);
+                item.SubItems.Add(khachHang.CMND);
+                item.SubItems.Add(khachHang.DiaChi);
                 liv_KhachHang.Items.Add(item);
 
                 ClearCustomerForm();
@@ -377,17 +376,18 @@ namespace QLKSGUI
                     liv_KhachHang.Items.Remove(liv_KhachHang.SelectedItems[0]);
                     for (int i = 0; i < liv_KhachHang.Items.Count; i++)
                     {
-                        liv_KhachHang.Items[i].SubItems[0].Text = (i + 1).ToString(); 
+                        liv_KhachHang.Items[i].SubItems[0].Text = (i + 1).ToString();
                     }
                     MessageBox.Show("Người được chọn đã bị xóa.");
+                    ClearCustomerForm();
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn người để xóa.");
                 }
 
-                btn_Them.Text = "Thêm"; 
-                
+                btn_Them.Text = "Thêm";
+
             }
         }
         private void btn_SuaThongTin_Click(object sender, EventArgs e)
@@ -398,7 +398,7 @@ namespace QLKSGUI
                 return;
             }
 
-            string cmnd = txt_CMND.Text;  
+            string cmnd = txt_CMND.Text;
             string tenKhachHang = txt_Ten.Text;
             string diaChi = txt_DiaChi.Text;
             string loaiKhach = rdbtn_NoiDia.Checked ? "Nội địa" : "Nước ngoài";
@@ -418,13 +418,13 @@ namespace QLKSGUI
 
         private void btn_ThongTinPhong_Click(object sender, EventArgs e)
         {
-            Form Form_DSPhong= new Form_DSPhong();
+            Form Form_DSPhong = new Form_DSPhong();
             Form_DSPhong.ShowDialog();
 
         }
         private void cbb_Phong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbb_Phong.SelectedIndex < 0) return; 
+            if (cbb_Phong.SelectedIndex < 0) return;
 
             var selectedItem = (ComboBoxItem)cbb_Phong.SelectedItem;
             string loaiPhong = selectedItem.LoaiPhong;
@@ -436,20 +436,35 @@ namespace QLKSGUI
                 MessageBox.Show($"Phòng {loaiPhong} chỉ chứa được tối đa {soNguoiToiDa} người.\n" +
                                 "Vui lòng xóa bớt người trong danh sách bằng cách chọn người và nhấn nút Xóa.",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
-            private void liv_KhachHang_Resize(object sender, EventArgs e)
-            {
-    
-                int widthCot = liv_KhachHang.ClientSize.Width / 9;
-                liv_KhachHang.Columns[0].Width = widthCot;
+        }
+        private void liv_KhachHang_Resize(object sender, EventArgs e)
+        {
 
-                for (int i = 1; i < liv_KhachHang.Columns.Count; i++)
-                {
-                    liv_KhachHang.Columns[i].Width = widthCot*2;
-                }
+            int widthCot = liv_KhachHang.ClientSize.Width / 9;
+            liv_KhachHang.Columns[0].Width = widthCot;
+
+            for (int i = 1; i < liv_KhachHang.Columns.Count; i++)
+            {
+                liv_KhachHang.Columns[i].Width = widthCot * 2;
             }
         }
 
+        private void dtp_NgayThue_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_NgayTra.MinDate = dtp_NgayThue.Value.AddDays(1);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtp_NgayTra_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
+}
 

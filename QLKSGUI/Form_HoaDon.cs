@@ -126,6 +126,7 @@ namespace QLKSGUI
                 {
                     MessageBox.Show($"Lỗi khi thanh toán: {ex.Message}", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btn_ThanhToan.Enabled = false;
                 }
             }
             else
@@ -133,6 +134,8 @@ namespace QLKSGUI
                 MessageBox.Show("Vui lòng chọn phòng cần thanh toán!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            btn_ThanhToan.Enabled = false;
+            txt_TriGia.Clear();
         }
 
         private void btn_Tim_Click(object sender, EventArgs e)

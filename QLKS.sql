@@ -1,7 +1,7 @@
 ﻿create database QLKS
-
+go
 use QLKS
-
+go
 create table Phong(
 	MaPhong char(5) primary key,
 	LoaiPhong nvarchar(20), --('Phòng đơn', 'Phòng đôi', 'Phòng lớn')),
@@ -42,6 +42,7 @@ create table HoaDon(
 	FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong),
     FOREIGN KEY (CMND) REFERENCES KhachHang(CMND),
 	foreign key (MaPhong, CMND, NgayDat) references Thue(MaPhong, CMND, NgayDat)
+)
 go
 
 
@@ -101,9 +102,6 @@ VALUES
 
 
 
-select * from Phong
-select * from KhachHang
-select * from Thue
-select * from HoaDon
+
 
 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Híll-codeweb\\New folder\\New folder\\QLKSGUI\\QLKSGUI.csproj": {}
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj": {}
   },
   "projects": {
-    "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\QLKSBUS.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\QLKSBUS.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj",
         "projectName": "QLKSBUS",
-        "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\QLKSBUS.csproj",
-        "packagesPath": "C:\\Users\\Hoang Hieu\\.nuget\\packages\\",
-        "outputPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hoang Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\QLKSDAO.csproj": {
-                "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\QLKSDAO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj"
               },
-              "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }
@@ -86,20 +86,20 @@
         }
       }
     },
-    "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\QLKSDAO.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\QLKSDAO.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj",
         "projectName": "QLKSDAO",
-        "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\QLKSDAO.csproj",
-        "packagesPath": "C:\\Users\\Hoang Hieu\\.nuget\\packages\\",
-        "outputPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDAO\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\QLKSDAO.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDAO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hoang Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -114,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }
@@ -165,20 +165,20 @@
         }
       }
     },
-    "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj",
         "projectName": "QLKSDTO",
-        "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj",
-        "packagesPath": "C:\\Users\\Hoang Hieu\\.nuget\\packages\\",
-        "outputPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hoang Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -240,20 +240,20 @@
         }
       }
     },
-    "D:\\Híll-codeweb\\New folder\\New folder\\QLKSGUI\\QLKSGUI.csproj": {
+    "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSGUI\\QLKSGUI.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
         "projectName": "QLKSGUI",
-        "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSGUI\\QLKSGUI.csproj",
-        "packagesPath": "C:\\Users\\Hoang Hieu\\.nuget\\packages\\",
-        "outputPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSGUI\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hoang Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -268,11 +268,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\QLKSBUS.csproj": {
-                "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSBUS\\QLKSBUS.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSBUS\\QLKSBUS.csproj"
               },
-              "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj": {
-                "projectPath": "D:\\Híll-codeweb\\New folder\\New folder\\QLKSDTO\\QLKSDTO.csproj"
+              "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSDTO\\QLKSDTO.csproj"
               }
             }
           }

@@ -327,3 +327,7 @@ D:\Híll-codeweb\New folder\New folder\QLKSGUI\obj\Debug\net6.0-windows\refint\Q
 D:\Híll-codeweb\New folder\New folder\QLKSGUI\obj\Debug\net6.0-windows\QLKSGUI.pdb
 D:\Híll-codeweb\New folder\New folder\QLKSGUI\obj\Debug\net6.0-windows\QLKSGUI.genruntimeconfig.cache
 D:\Híll-codeweb\New folder\New folder\QLKSGUI\obj\Debug\net6.0-windows\ref\QLKSGUI.dll
+C:\Users\PC\Downloads\QLKS\QLKSGUI\bin\Debug\net6.0-windows\pic\h1.jpg
+C:\Users\PC\Downloads\QLKS\QLKSGUI\bin\Debug\net6.0-windows\pic\h2.jpg
+C:\Users\PC\Downloads\QLKS\QLKSGUI\bin\Debug\net6.0-windows\pic\h3.jpg
+C:\Users\PC\Downloads\QLKS\QLKSGUI\bin\Debug\net6.0-windows\pic\h4.jpg

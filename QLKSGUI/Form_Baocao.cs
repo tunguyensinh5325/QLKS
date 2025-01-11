@@ -15,10 +15,10 @@ namespace QLKSGUI
         {
             foreach (HoaDon hd in dshd)
             {
-                if (!cbb_namlp.Items.Contains(hd.NgayDat.Year))
+                if (!cbbox_namlp.Items.Contains(hd.NgayDat.Year))
                 {
-                    cbb_namlp.Items.Add(hd.NgayDat.Year);
-                    cbb_nammd.Items.Add(hd.NgayDat.Year);
+                    cbbox_namlp.Items.Add(hd.NgayDat.Year);
+                    cbbox_nammd.Items.Add(hd.NgayDat.Year);
                 }
             }
         }
@@ -26,12 +26,12 @@ namespace QLKSGUI
         private void btn_Locmd_Click(object sender, EventArgs e)
         {
             lv_DSMD.Items.Clear();
-            if (cbb_nammd.Text == "")
+            if (cbbox_nammd.Text == "")
             {
                 MessageBox.Show("Hãy chọn năm!");
                 return;
             }
-            List<int> sn = PhongBUS.DSmd(cbbox_thangmd.Text, cbb_nammd.Text);
+            List<int> sn = PhongBUS.DSmd(cbbox_thangmd.Text, cbbox_nammd.Text);
             int tong = sn.Sum();
             for (int i = 0; i < p.Count; i++)
             {
@@ -58,14 +58,14 @@ namespace QLKSGUI
         private void btn_Loclp_Click(object sender, EventArgs e)
         {
             lv_DSLP.Items.Clear();
-            if (cbb_namlp.Text == "")
+            if (cbbox_namlp.Text == "")
             {
                 MessageBox.Show("Hãy chọn năm!");
                 return;
             }
 
             List<string> dslp = PhongBUS.DSlp();
-            List<int> dt = PhongBUS.DSdt(cbbox_thanglp.Text, cbb_namlp.Text);
+            List<int> dt = PhongBUS.DSdt(cbbox_thanglp.Text, cbbox_namlp.Text);
             int tong = dt.Sum();
             for (int i = 0; i < dslp.Count; i++)
             {
