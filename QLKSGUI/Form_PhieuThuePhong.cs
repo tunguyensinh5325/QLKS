@@ -36,12 +36,17 @@ namespace QLKSGUI
         {
             InitializeComponent();
         }
+        private void Form_PhieuThuePhong_Resize(object sender, EventArgs e)
+        {
+            liv_KhachHang_Resize(sender, e);
+        }
 
         private void Form_PhieuThuePhong_Load(object sender, EventArgs e)
         {
             liv_KhachHang_Resize(sender, e);
             dtp_NgayThue.MinDate = DateTime.Now;
             dtp_NgayTra.MinDate = DateTime.Now.AddDays(1);
+            dtp_NgayThue.MaxDate = DateTime.Now.AddDays(7);
             LoadPhongTrong();
 
             string[] imagePaths = { "pic/h4.jpg", "pic/h3.jpg", "pic/h2.jpg", "pic/h1.jpg" };

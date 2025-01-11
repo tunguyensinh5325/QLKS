@@ -145,6 +145,7 @@
             liv_KhachHang.UseCompatibleStateImageBehavior = false;
             liv_KhachHang.View = View.Details;
             liv_KhachHang.SelectedIndexChanged += liv_KhachHang_SelectedIndexChanged;
+            liv_KhachHang.Resize += liv_KhachHang_Resize;
             // 
             // cl_STT
             // 
@@ -585,6 +586,7 @@
             Name = "Form_PhieuThuePhong";
             Text = "PhieuThuePhong";
             Load += Form_PhieuThuePhong_Load;
+            Resize += Form_PhieuThuePhong_Resize;
             tblp_Form.ResumeLayout(false);
             tblp_Form.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picb_QuangCao).EndInit();

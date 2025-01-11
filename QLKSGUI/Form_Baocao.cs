@@ -83,5 +83,34 @@ namespace QLKSGUI
                 lv_DSLP.Items.Add(item);
             }
         }
+        private void lv_DSLP_Resize(object sender, EventArgs e)
+        {
+
+            int widthCot = lv_DSLP.ClientSize.Width / 7;
+            lv_DSLP.Columns[0].Width = widthCot;
+
+            for (int i = 1; i < lv_DSLP.Columns.Count; i++)
+            {
+                lv_DSLP.Columns[i].Width = widthCot * 2;
+            }
+        }
+        private void lv_DSMD_Resize(object sender, EventArgs e)
+        {
+
+            int widthCot = lv_DSMD.ClientSize.Width / 7;
+            lv_DSMD.Columns[0].Width = widthCot;
+
+            for (int i = 1; i < lv_DSMD.Columns.Count; i++)
+            {
+                lv_DSMD.Columns[i].Width = widthCot * 2;
+            }
+        }
+
+        private void Form_Baocao_Resize(object sender, EventArgs e)
+        {
+            lv_DSMD_Resize(sender, e);
+            lv_DSLP_Resize(sender, e);
+        }
+
     }
 }

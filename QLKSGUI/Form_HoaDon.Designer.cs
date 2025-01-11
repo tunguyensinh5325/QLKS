@@ -121,6 +121,7 @@
             lv_HoaDonThanhToan.TabIndex = 28;
             lv_HoaDonThanhToan.UseCompatibleStateImageBehavior = false;
             lv_HoaDonThanhToan.View = View.Details;
+            lv_HoaDonThanhToan.Resize += lv_HoaDonThanhToan_Resize;
             // 
             // cl_stt
             // 
@@ -253,6 +254,7 @@
             btn_Tim.TabIndex = 37;
             btn_Tim.Text = "Tìm";
             btn_Tim.UseVisualStyleBackColor = true;
+            btn_Tim.Click += btn_Tim_Click;
             // 
             // btn_ThanhToan
             // 

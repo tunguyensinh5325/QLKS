@@ -228,6 +228,7 @@
             lv_DSMD.TabIndex = 3;
             lv_DSMD.UseCompatibleStateImageBehavior = false;
             lv_DSMD.View = View.Details;
+            lv_DSMD.Resize += lv_DSMD_Resize;
             // 
             // columnHeader12
             // 
@@ -441,6 +442,7 @@
             lv_DSLP.TabIndex = 7;
             lv_DSLP.UseCompatibleStateImageBehavior = false;
             lv_DSLP.View = View.Details;
+            lv_DSLP.Resize += lv_DSLP_Resize;
             // 
             // columnHeader8
             // 
