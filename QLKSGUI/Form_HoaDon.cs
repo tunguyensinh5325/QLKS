@@ -129,7 +129,7 @@ namespace QLKSGUI
                 return;
             }
 
-            var khachHang = KhachHangBUS.LayTTKH(cmnd);
+            var khachHang = KhachHangBUS.LayKhachHangTheoCMND(cmnd);
             if (khachHang == null)
             {
                 MessageBox.Show("Không tìm thấy khách hàng với CMND này!", "Thông báo",

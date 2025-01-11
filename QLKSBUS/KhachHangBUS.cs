@@ -13,7 +13,10 @@ namespace QLKSBUS
         {
             return KhachHangDAO.LayDSKhachHang();
         }
-
+        public static List<KhachHang> DSKHDangThuePhong(string mp)
+        {
+            return KhachHangDAO.LayDSKhachHangDangThueCuaPhong(mp);
+        }
         public static bool ThemKhachHang(KhachHang kh)
         {
             if (string.IsNullOrEmpty(kh.CMND) || string.IsNullOrEmpty(kh.TenKH) || string.IsNullOrEmpty(kh.LoaiKH))
@@ -75,9 +78,6 @@ namespace QLKSBUS
             }
         }
 
-        public static KhachHang LayTTKH(string CMND)
-        {
-            return KhachHangDAO.LayKhachHangTheoCMND(CMND);
-        }
+        
     }
 }

@@ -52,12 +52,12 @@
             // lb_DanhSachPhong
             // 
             lb_DanhSachPhong.AutoSize = true;
-            lb_DanhSachPhong.Dock = DockStyle.Top;
-            lb_DanhSachPhong.Font = new Font("Times New Roman", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_DanhSachPhong.Dock = DockStyle.Fill;
+            lb_DanhSachPhong.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
             lb_DanhSachPhong.Location = new Point(4, 0);
             lb_DanhSachPhong.Margin = new Padding(4, 0, 4, 0);
             lb_DanhSachPhong.Name = "lb_DanhSachPhong";
-            lb_DanhSachPhong.Size = new Size(959, 36);
+            lb_DanhSachPhong.Size = new Size(959, 73);
             lb_DanhSachPhong.TabIndex = 0;
             lb_DanhSachPhong.Text = "Danh Sách Phòng";
             lb_DanhSachPhong.TextAlign = ContentAlignment.MiddleCenter;
@@ -71,7 +71,6 @@
             btn_TimPhong.Size = new Size(123, 43);
             btn_TimPhong.TabIndex = 2;
             btn_TimPhong.Text = "Tìm Phòng";
-            btn_TimPhong.TextAlign = ContentAlignment.TopCenter;
             btn_TimPhong.UseVisualStyleBackColor = true;
             btn_TimPhong.Click += btn_TimPhong_Click;
             // 

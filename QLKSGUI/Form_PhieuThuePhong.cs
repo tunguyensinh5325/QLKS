@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using QLKSBUS;
 using QLKSDTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace QLKSGUI
@@ -204,7 +205,7 @@ namespace QLKSGUI
 
                 string loaiKhach = selectedItem.SubItems[2].Text;
 
-                if (loaiKhach.Equals("Nước Ngoài", StringComparison.OrdinalIgnoreCase))
+                if (loaiKhach.Equals("Nước ngoài", StringComparison.OrdinalIgnoreCase))
                 {
                     rdbtn_NuocNgoai.Checked = true;
                 }
@@ -230,7 +231,8 @@ namespace QLKSGUI
         }
 
         private void btn_XuatPhieu_Click(object sender, EventArgs e)
-        {if (cbb_Phong.SelectedIndex < 0)
+        {
+            if (cbb_Phong.SelectedIndex < 0)
             {
                 MessageBox.Show("Bạn chưa chọn phòng.");
                 return;
@@ -244,17 +246,7 @@ namespace QLKSGUI
                 MessageBox.Show("Không có khách hàng nào trong danh sách.");
                 return;
             }
-            foreach (ListViewItem item in liv_KhachHang.Items)
-            {
-                string cmnd = item.SubItems[cl_CMND.Index].Text;
-                string tenKH = item.SubItems[cl_KhachHang.Index].Text;
-                string loaiKH = item.SubItems[cl_LoaiKhach.Index].Text;
-                string diaChi = item.SubItems[cl_DiaChi.Index].Text;
-
-                if (KhachHangBUS.LayKhachHangTheoCMND(cmnd)!=null) { }
-                MessageBox.Show("Khách hàng " + cmnd + " đã tồn tại, vui lòng thử lại"!);
-                        return;
-                }
+            
 
             foreach (ListViewItem item in liv_KhachHang.Items)
             {
@@ -310,48 +302,66 @@ namespace QLKSGUI
             }
         }
 
-
+        public static KhachHang SaiKHCoSan(KhachHang kh)
+        {
+            KhachHang check = KhachHangBUS.LayKhachHangTheoCMND(kh.CMND);
+            if (check==null)
+            {
+                return kh;
+            }
+            if (check.LoaiKH != kh.LoaiKH || kh.DiaChi!=check.DiaChi || kh.TenKH!=check.TenKH)
+            {
+                DialogResult result = MessageBox.Show(
+                $"Thông tin của bạn đã tồn tại với Tên: {check.TenKH}, Địa chỉ: {check.DiaChi}, Loại Khách Hàng: {check.LoaiKH}\n" +
+                $"Bạn có muốn đổi không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo
+                );
+                if (result == DialogResult.Yes)
+                {
+                    KhachHangBUS.CapNhatKhachHang(kh);                
+                }
+                else if (result == DialogResult.No)
+                {
+                    return check;
+                }
+            }
+            return kh;
+        }
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (btn_Them.Text == "Thêm")
             {
+                foreach (ListViewItem i in liv_KhachHang.Items)
+                {
+                    if (i.SubItems[3].Text == txt_CMND.Text)
+                    {
+                        MessageBox.Show("Đã tồn tại trong danh sách thuê, không thể thêm!");
+                        return;
+                    }
+                }
                 if (string.IsNullOrEmpty(txt_CMND.Text) || string.IsNullOrEmpty(txt_Ten.Text))
                 {
                     MessageBox.Show("Tên và CMND không được để trống.");
                     return;
                 }
-                if (cbb_Phong.SelectedItem != null)
-                {
-                    ComboBoxItem selectedItem = (ComboBoxItem)cbb_Phong.SelectedItem;
-
-                    if (selectedItem.LoaiPhong == "Phòng đơn" && liv_KhachHang.Items.Count >= 2)
-                    {
-                        MessageBox.Show("Phòng đơn chỉ có thể chứa tối đa 1 khách.");
-                        return;
-                    }
-
-                    if (selectedItem.LoaiPhong == "Phòng đôi" && liv_KhachHang.Items.Count >= 4)
-                    {
-                        MessageBox.Show("Phòng đôi chỉ có thể chứa tối đa 2 khách.");
-                        return;
-                    }
-                }
-                else
+                if (cbb_Phong.SelectedItem == null)
                 {
                     MessageBox.Show("Bạn chưa chọn loại phòng!");
                     return;
                 }
+                
                 int sttMoi = liv_KhachHang.Items.Count + 1;
                 KhachHang khachHang = new KhachHang
                 {
                     CMND = txt_CMND.Text,
                     TenKH = txt_Ten.Text,
                     DiaChi = txt_DiaChi.Text,
-                    LoaiKH = rdbtn_NoiDia.Checked ? "Nội Địa" : "Nước Ngoài"
+                    LoaiKH = rdbtn_NoiDia.Checked ? "Nội địa" : "Nước ngoài"
                 };
 
-
-
+                khachHang = SaiKHCoSan(khachHang);
+                
                 ListViewItem item = new ListViewItem(sttMoi.ToString()); 
                 item.SubItems.Add(khachHang.TenKH);                     
                 item.SubItems.Add(khachHang.LoaiKH);                    
@@ -391,7 +401,7 @@ namespace QLKSGUI
             string cmnd = txt_CMND.Text;  
             string tenKhachHang = txt_Ten.Text;
             string diaChi = txt_DiaChi.Text;
-            string loaiKhach = rdbtn_NoiDia.Checked ? "Nội Địa" : "Nước Ngoài";
+            string loaiKhach = rdbtn_NoiDia.Checked ? "Nội địa" : "Nước ngoài";
 
 
             ListViewItem selectedItem = liv_KhachHang.SelectedItems[0];

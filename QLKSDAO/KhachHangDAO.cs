@@ -36,6 +36,35 @@ namespace QLKSDAO
 
             return dsKhachHang;
         }
+        public static List<KhachHang> LayDSKhachHangDangThueCuaPhong(string maphong)
+        {
+            List<KhachHang> dskh=new List<KhachHang>();
+            string sql = "SELECT kh.CMND, kh.TenKH, kh.LoaiKH, kh.DiaChi\r\n" +
+                "FROM KhachHang kh\r\n" +
+                "JOIN Thue t ON kh.CMND = t.CMND\r\n" +
+                "WHERE t.MaPhong = @MaPhong AND NOT EXISTS (\r\n " +
+                "SELECT 1\r\n" +
+                "FROM HoaDon hd WHERE hd.MaPhong = t.MaPhong AND hd.NgayDat = t.NgayDat)";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@MaPhong", maphong);
+            DataTable dtKhachHang = DataProvider.SelectData(
+                sql,
+                CommandType.Text,
+                parameters
+            );
+            foreach (DataRow row in dtKhachHang.Rows)
+            {
+                KhachHang kh = new KhachHang
+                {
+                    CMND = row["CMND"].ToString(),
+                    TenKH = row["TenKH"].ToString(),
+                    LoaiKH = row["LoaiKH"].ToString(),
+                    DiaChi = row["DiaChi"].ToString()
+                };
+                dskh.Add(kh);
+            }
+            return dskh;
+        }
 
         public static void ThemKhachHang(KhachHang kh)
         {
@@ -102,7 +131,7 @@ namespace QLKSDAO
                     DiaChi = row["DiaChi"].ToString()
                 };
             }
-
+            kh.CMND= kh.CMND.Replace(" ", "");
             return kh;
         }
     }

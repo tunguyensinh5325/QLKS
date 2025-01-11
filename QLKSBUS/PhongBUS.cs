@@ -41,7 +41,6 @@ namespace QLKSBUS
 
             if (p.Gia < 0)
                 return false;
-
             try
             {
                 PhongDAO.ThemPhong(p);
