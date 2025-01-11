@@ -68,7 +68,7 @@
             tblp_HoaDon.Name = "tblp_HoaDon";
             tblp_HoaDon.RowCount = 1;
             tblp_HoaDon.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblp_HoaDon.Size = new Size(1347, 90);
+            tblp_HoaDon.Size = new Size(1024, 90);
             tblp_HoaDon.TabIndex = 0;
             // 
             // lb_HoaDonThanhToan
@@ -81,7 +81,7 @@
             lb_HoaDonThanhToan.Margin = new Padding(4, 0, 4, 0);
             lb_HoaDonThanhToan.Name = "lb_HoaDonThanhToan";
             lb_HoaDonThanhToan.RightToLeft = RightToLeft.No;
-            lb_HoaDonThanhToan.Size = new Size(1339, 90);
+            lb_HoaDonThanhToan.Size = new Size(1016, 90);
             lb_HoaDonThanhToan.TabIndex = 27;
             lb_HoaDonThanhToan.Text = "HÓA ĐƠN THANH TOÁN";
             lb_HoaDonThanhToan.TextAlign = ContentAlignment.MiddleCenter;
@@ -89,18 +89,18 @@
             // txt_DiaChi
             // 
             txt_DiaChi.Dock = DockStyle.Fill;
-            txt_DiaChi.Location = new Point(369, 3);
+            txt_DiaChi.Location = new Point(281, 3);
             txt_DiaChi.Margin = new Padding(4, 3, 4, 3);
             txt_DiaChi.Name = "txt_DiaChi";
             txt_DiaChi.ReadOnly = true;
-            txt_DiaChi.Size = new Size(359, 35);
+            txt_DiaChi.Size = new Size(271, 35);
             txt_DiaChi.TabIndex = 33;
             // 
             // lb_DiaChi
             // 
             lb_DiaChi.AutoSize = true;
             lb_DiaChi.Dock = DockStyle.Right;
-            lb_DiaChi.Location = new Point(268, 0);
+            lb_DiaChi.Location = new Point(180, 0);
             lb_DiaChi.Margin = new Padding(4, 0, 4, 0);
             lb_DiaChi.Name = "lb_DiaChi";
             lb_DiaChi.Size = new Size(93, 58);
@@ -117,7 +117,7 @@
             lv_HoaDonThanhToan.Location = new Point(4, 227);
             lv_HoaDonThanhToan.Margin = new Padding(4, 3, 4, 3);
             lv_HoaDonThanhToan.Name = "lv_HoaDonThanhToan";
-            lv_HoaDonThanhToan.Size = new Size(1347, 346);
+            lv_HoaDonThanhToan.Size = new Size(1024, 346);
             lv_HoaDonThanhToan.TabIndex = 28;
             lv_HoaDonThanhToan.UseCompatibleStateImageBehavior = false;
             lv_HoaDonThanhToan.View = View.Details;
@@ -154,27 +154,27 @@
             // txt_KhachHang
             // 
             txt_KhachHang.Dock = DockStyle.Fill;
-            txt_KhachHang.Location = new Point(371, 3);
+            txt_KhachHang.Location = new Point(283, 3);
             txt_KhachHang.Margin = new Padding(4, 3, 4, 3);
             txt_KhachHang.Name = "txt_KhachHang";
-            txt_KhachHang.Size = new Size(359, 35);
+            txt_KhachHang.Size = new Size(271, 35);
             txt_KhachHang.TabIndex = 32;
             // 
             // txt_TriGia
             // 
             txt_TriGia.Dock = DockStyle.Fill;
-            txt_TriGia.Location = new Point(1044, 3);
+            txt_TriGia.Location = new Point(794, 3);
             txt_TriGia.Margin = new Padding(4, 3, 4, 3);
             txt_TriGia.Name = "txt_TriGia";
             txt_TriGia.ReadOnly = true;
-            txt_TriGia.Size = new Size(299, 35);
+            txt_TriGia.Size = new Size(226, 35);
             txt_TriGia.TabIndex = 34;
             // 
             // lb_TriGia
             // 
             lb_TriGia.AutoSize = true;
             lb_TriGia.Dock = DockStyle.Right;
-            lb_TriGia.Location = new Point(951, 0);
+            lb_TriGia.Location = new Point(701, 0);
             lb_TriGia.Margin = new Padding(4, 0, 4, 0);
             lb_TriGia.Name = "lb_TriGia";
             lb_TriGia.Size = new Size(85, 58);
@@ -185,7 +185,7 @@
             // 
             lb_KhachHang.AutoSize = true;
             lb_KhachHang.Dock = DockStyle.Right;
-            lb_KhachHang.Location = new Point(236, 0);
+            lb_KhachHang.Location = new Point(148, 0);
             lb_KhachHang.Margin = new Padding(4, 0, 4, 0);
             lb_KhachHang.Name = "lb_KhachHang";
             lb_KhachHang.Size = new Size(127, 58);
@@ -207,7 +207,7 @@
             tblp_lvHoaDon.Name = "tblp_lvHoaDon";
             tblp_lvHoaDon.RowCount = 1;
             tblp_lvHoaDon.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblp_lvHoaDon.Size = new Size(1347, 58);
+            tblp_lvHoaDon.Size = new Size(1024, 58);
             tblp_lvHoaDon.TabIndex = 1;
             // 
             // tblp_btn
@@ -227,17 +227,17 @@
             tblp_btn.Name = "tblp_btn";
             tblp_btn.RowCount = 1;
             tblp_btn.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblp_btn.Size = new Size(1347, 58);
+            tblp_btn.Size = new Size(1024, 58);
             tblp_btn.TabIndex = 2;
             // 
             // btn_QuayLai
             // 
             btn_QuayLai.Dock = DockStyle.Fill;
             btn_QuayLai.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_QuayLai.Location = new Point(340, 3);
+            btn_QuayLai.Location = new Point(260, 3);
             btn_QuayLai.Margin = new Padding(4, 3, 4, 3);
             btn_QuayLai.Name = "btn_QuayLai";
-            btn_QuayLai.Size = new Size(326, 52);
+            btn_QuayLai.Size = new Size(246, 52);
             btn_QuayLai.TabIndex = 36;
             btn_QuayLai.Text = "Quay Lại";
             btn_QuayLai.UseVisualStyleBackColor = true;
@@ -246,10 +246,10 @@
             // btn_Tim
             // 
             btn_Tim.Dock = DockStyle.Fill;
-            btn_Tim.Location = new Point(674, 3);
+            btn_Tim.Location = new Point(514, 3);
             btn_Tim.Margin = new Padding(4, 3, 4, 3);
             btn_Tim.Name = "btn_Tim";
-            btn_Tim.Size = new Size(331, 52);
+            btn_Tim.Size = new Size(249, 52);
             btn_Tim.TabIndex = 37;
             btn_Tim.Text = "Tìm";
             btn_Tim.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             btn_ThanhToan.Location = new Point(4, 3);
             btn_ThanhToan.Margin = new Padding(4, 3, 4, 3);
             btn_ThanhToan.Name = "btn_ThanhToan";
-            btn_ThanhToan.Size = new Size(328, 52);
+            btn_ThanhToan.Size = new Size(248, 52);
             btn_ThanhToan.TabIndex = 35;
             btn_ThanhToan.Text = "Thanh Toán";
             btn_ThanhToan.UseVisualStyleBackColor = true;
@@ -269,10 +269,10 @@
             // btn_reset
             // 
             btn_reset.Dock = DockStyle.Fill;
-            btn_reset.Location = new Point(1013, 3);
+            btn_reset.Location = new Point(771, 3);
             btn_reset.Margin = new Padding(4, 3, 4, 3);
             btn_reset.Name = "btn_reset";
-            btn_reset.Size = new Size(330, 52);
+            btn_reset.Size = new Size(249, 52);
             btn_reset.TabIndex = 38;
             btn_reset.Text = "Reset";
             btn_reset.UseVisualStyleBackColor = true;
@@ -295,7 +295,7 @@
             tblp_input.Name = "tblp_input";
             tblp_input.RowCount = 1;
             tblp_input.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblp_input.Size = new Size(1347, 58);
+            tblp_input.Size = new Size(1024, 58);
             tblp_input.TabIndex = 3;
             // 
             // tblp_all
@@ -317,14 +317,14 @@
             tblp_all.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tblp_all.RowStyles.Add(new RowStyle(SizeType.Percent, 55F));
             tblp_all.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tblp_all.Size = new Size(1355, 640);
+            tblp_all.Size = new Size(1032, 640);
             tblp_all.TabIndex = 4;
             // 
             // Form_HoaDon
             // 
             AutoScaleDimensions = new SizeF(13F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1355, 640);
+            ClientSize = new Size(1032, 640);
             Controls.Add(tblp_all);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
