@@ -18,34 +18,38 @@ namespace QLKSGUI
         public Form_HoaDon()
         {
             InitializeComponent();
-            btn_Tim.Click += btn_Tim_Click;
-            btn_reset.Click += btn_reset_Click;
-            lv_HoaDonThanhToan.SelectedIndexChanged += lv_HoaDonThanhToan_SelectedIndexChanged;
+            btn_Tim.Click += btn_Tim_Click; // Gán sự kiện Click cho nút tìm
+            btn_reset.Click += btn_reset_Click; // Gán sự kiện Click cho nút reset
+            lv_HoaDonThanhToan.SelectedIndexChanged += lv_HoaDonThanhToan_SelectedIndexChanged; // Gán sự kiện khi chọn item trong ListView
         }
+
+        // Tải danh sách thuê lên ListView
         private void LoadThueToListView(List<Thue> dsThue)
         {
-            lv_HoaDonThanhToan.Items.Clear();
-            int stt = 1;
-            decimal tongTriGia = 0;
+            lv_HoaDonThanhToan.Items.Clear(); // Xóa danh sách cũ
+            int stt = 1; // Khởi tạo số thứ tự
+            decimal tongTriGia = 0; // Tổng trị giá ban đầu
 
             foreach (var thue in dsThue)
             {
-                decimal thanhTien = ThueBUS.TinhThanhTien(thue.MaPhong, thue.NgayDat, thue.NgayTra);
-                var phong = PhongBUS.LayTTPhong(thue.MaPhong);
+                decimal thanhTien = ThueBUS.TinhThanhTien(thue.MaPhong, thue.NgayDat, thue.NgayTra); // Tính thành tiền
+                var phong = PhongBUS.LayTTPhong(thue.MaPhong); // Lấy thông tin phòng
 
+                // Tạo item ListView
                 ListViewItem item = new ListViewItem(stt.ToString());
                 item.SubItems.Add(thue.MaPhong);
-                item.SubItems.Add((thue.NgayTra - thue.NgayDat).Days.ToString());
-                item.SubItems.Add(string.Format("{0:#,##0}", phong.Gia));
-                item.SubItems.Add(string.Format("{0:#,##0}", thanhTien));
+                item.SubItems.Add((thue.NgayTra - thue.NgayDat).Days.ToString()); // Số ngày thuê
+                item.SubItems.Add(string.Format("{0:#,##0}", phong.Gia)); // Hiển thị giá phòng
+                item.SubItems.Add(string.Format("{0:#,##0}", thanhTien)); // Hiển thị thành tiền
 
-                item.Tag = new { Thue = thue, ThanhTien = thanhTien };
+                item.Tag = new { Thue = thue, ThanhTien = thanhTien }; // Lưu dữ liệu trong Tag
                 lv_HoaDonThanhToan.Items.Add(item);
 
                 stt++;
-                tongTriGia += thanhTien;
+                tongTriGia += thanhTien; // Cộng dồn thành tiền vào tổng trị giá
             }
 
+            // Hiển thị tổng trị giá
             if (dsThue.Count > 0)
             {
                 txt_TriGia.Text = string.Format("{0:#,##0}", tongTriGia);
@@ -59,14 +63,16 @@ namespace QLKSGUI
 
         private void Form_HoaDon_Load(object sender, EventArgs e)
         {
-            ClearForm();
+            ClearForm(); // Xóa dữ liệu khi form được load
         }
+
         private void lv_HoaDonThanhToan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lv_HoaDonThanhToan.SelectedItems.Count > 0)
             {
+                // Lấy dữ liệu từ Tag của item đã chọn
                 dynamic itemData = lv_HoaDonThanhToan.SelectedItems[0].Tag;
-                txt_TriGia.Text = string.Format("{0:#,##0}", itemData.ThanhTien);
+                txt_TriGia.Text = string.Format("{0:#,##0}", itemData.ThanhTien); // Hiển thị thành tiền
             }
         }
 
@@ -74,13 +80,16 @@ namespace QLKSGUI
         {
             if (lv_HoaDonThanhToan.SelectedItems.Count > 0)
             {
+                // Lấy item đã chọn trong ListView
                 ListViewItem selectedItem = lv_HoaDonThanhToan.SelectedItems[0];
                 dynamic itemData = selectedItem.Tag;
                 var thue = itemData.Thue;
                 decimal thanhTien = itemData.ThanhTien;
 
+                // Tạo mã hóa đơn
                 string maHD = $"{thue.MaPhong}-{thue.NgayDat:yyMMdd}";
 
+                // Khởi tạo đối tượng Hóa Đơn
                 HoaDon hoaDon = new HoaDon
                 {
                     MaHD = maHD,
@@ -93,13 +102,14 @@ namespace QLKSGUI
 
                 try
                 {
+                    // Thêm hóa đơn vào cơ sở dữ liệu
                     bool hoaDonSuccess = HoaDonBUS.ThemHoaDon(hoaDon);
                     if (hoaDonSuccess)
                     {
                         MessageBox.Show("Thanh toán thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        btn_Tim_Click(sender, e);
+                        btn_Tim_Click(sender, e); // Tải lại danh sách thuê
                     }
                     else
                     {
@@ -121,7 +131,7 @@ namespace QLKSGUI
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            string cmnd = txt_KhachHang.Text.Trim();
+            string cmnd = txt_KhachHang.Text.Trim(); // Lấy CMND nhập từ người dùng
             if (string.IsNullOrEmpty(cmnd))
             {
                 MessageBox.Show("Vui lòng nhập CMND để tìm kiếm!", "Thông báo",
@@ -129,7 +139,7 @@ namespace QLKSGUI
                 return;
             }
 
-            var khachHang = KhachHangBUS.LayKhachHangTheoCMND(cmnd);
+            var khachHang = KhachHangBUS.LayKhachHangTheoCMND(cmnd); // Lấy thông tin khách hàng
             if (khachHang == null)
             {
                 MessageBox.Show("Không tìm thấy khách hàng với CMND này!", "Thông báo",
@@ -137,28 +147,28 @@ namespace QLKSGUI
                 return;
             }
 
-            txt_DiaChi.Text = khachHang.DiaChi;
+            txt_DiaChi.Text = khachHang.DiaChi; // Hiển thị địa chỉ khách hàng
 
-            var dsThue = ThueBUS.LayDSPKhachChuaThanhToan(cmnd);
-            LoadThueToListView(dsThue);
+            var dsThue = ThueBUS.LayDSPKhachChuaThanhToan(cmnd); // Lấy danh sách phòng chưa thanh toán
+            LoadThueToListView(dsThue); // Hiển thị danh sách phòng
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-            ClearForm();
+            ClearForm(); // Xóa dữ liệu trên form
         }
 
         private void ClearForm()
         {
-            txt_KhachHang.Clear();
-            txt_DiaChi.Clear();
-            txt_TriGia.Clear();
-            lv_HoaDonThanhToan.Items.Clear();
+            txt_KhachHang.Clear(); // Xóa CMND
+            txt_DiaChi.Clear(); // Xóa địa chỉ
+            txt_TriGia.Clear(); // Xóa trị giá
+            lv_HoaDonThanhToan.Items.Clear(); // Xóa danh sách phòng
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Đóng form
         }
     }
 }
