@@ -201,7 +201,7 @@
             btn_Locmd.Name = "btn_Locmd";
             btn_Locmd.Size = new Size(134, 34);
             btn_Locmd.TabIndex = 8;
-            btn_Locmd.Text = "Lọc";
+            btn_Locmd.Text = "Lọc 12";
             btn_Locmd.UseVisualStyleBackColor = true;
             btn_Locmd.Click += btn_Locmd_Click;
             // 
