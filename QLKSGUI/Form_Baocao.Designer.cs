@@ -50,6 +50,50 @@
             lb_nammd = new Label();
             lb_namlp = new Label();
             btn_Loclp = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tblp_TieuDe2 = new TableLayoutPanel();
+            label1 = new Label();
+            tblp_btn2 = new TableLayoutPanel();
+            button1 = new Button();
+            tblp_thangnam2 = new TableLayoutPanel();
+            label2 = new Label();
+            comboBox1 = new ComboBox();
+            label3 = new Label();
+            comboBox2 = new ComboBox();
+            tblp_lv2 = new TableLayoutPanel();
+            listView1 = new ListView();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
+            columnHeader11 = new ColumnHeader();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tblp_TieuDe1 = new TableLayoutPanel();
+            label4 = new Label();
+            tblp_thangnam1 = new TableLayoutPanel();
+            label5 = new Label();
+            comboBox3 = new ComboBox();
+            label6 = new Label();
+            comboBox4 = new ComboBox();
+            tblp_lv1 = new TableLayoutPanel();
+            listView2 = new ListView();
+            columnHeader12 = new ColumnHeader();
+            columnHeader13 = new ColumnHeader();
+            columnHeader14 = new ColumnHeader();
+            columnHeader15 = new ColumnHeader();
+            tblp_btn1 = new TableLayoutPanel();
+            button2 = new Button();
+            tblp_BaoCao = new TableLayoutPanel();
+            tableLayoutPanel2.SuspendLayout();
+            tblp_TieuDe2.SuspendLayout();
+            tblp_btn2.SuspendLayout();
+            tblp_thangnam2.SuspendLayout();
+            tblp_lv2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            tblp_TieuDe1.SuspendLayout();
+            tblp_thangnam1.SuspendLayout();
+            tblp_lv1.SuspendLayout();
+            tblp_btn1.SuspendLayout();
+            tblp_BaoCao.SuspendLayout();
             SuspendLayout();
             // 
             // lb_MatDo
@@ -260,11 +304,401 @@
             btn_Loclp.UseVisualStyleBackColor = true;
             btn_Loclp.Click += btn_Loclp_Click;
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(tblp_TieuDe2, 0, 0);
+            tableLayoutPanel2.Controls.Add(tblp_btn2, 0, 3);
+            tableLayoutPanel2.Controls.Add(tblp_thangnam2, 0, 1);
+            tableLayoutPanel2.Controls.Add(tblp_lv2, 0, 2);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(789, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.47F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 57.37F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.16F));
+            tableLayoutPanel2.Size = new Size(780, 419);
+            tableLayoutPanel2.TabIndex = 24;
+            // 
+            // tblp_TieuDe2
+            // 
+            tblp_TieuDe2.ColumnCount = 1;
+            tblp_TieuDe2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_TieuDe2.Controls.Add(label1, 0, 0);
+            tblp_TieuDe2.Dock = DockStyle.Top;
+            tblp_TieuDe2.Location = new Point(3, 3);
+            tblp_TieuDe2.Name = "tblp_TieuDe2";
+            tblp_TieuDe2.RowCount = 1;
+            tblp_TieuDe2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_TieuDe2.Size = new Size(774, 51);
+            tblp_TieuDe2.TabIndex = 20;
+            // 
+            // label1
+            // 
+            label1.BackColor = SystemColors.ActiveCaption;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(5, 0);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(764, 51);
+            label1.TabIndex = 4;
+            label1.Text = "Báo Cáo Doanh Thu Theo Loại Phòng";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // tblp_btn2
+            // 
+            tblp_btn2.ColumnCount = 1;
+            tblp_btn2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_btn2.Controls.Add(button1, 0, 0);
+            tblp_btn2.Dock = DockStyle.Right;
+            tblp_btn2.Location = new Point(649, 365);
+            tblp_btn2.Name = "tblp_btn2";
+            tblp_btn2.RowCount = 1;
+            tblp_btn2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_btn2.Size = new Size(128, 51);
+            tblp_btn2.TabIndex = 23;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Fill;
+            button1.Location = new Point(4, 3);
+            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 45);
+            button1.TabIndex = 14;
+            button1.Text = "Lọc";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // tblp_thangnam2
+            // 
+            tblp_thangnam2.ColumnCount = 4;
+            tblp_thangnam2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam2.Controls.Add(label2, 0, 0);
+            tblp_thangnam2.Controls.Add(comboBox1, 1, 0);
+            tblp_thangnam2.Controls.Add(label3, 2, 0);
+            tblp_thangnam2.Controls.Add(comboBox2, 3, 0);
+            tblp_thangnam2.Dock = DockStyle.Fill;
+            tblp_thangnam2.Location = new Point(3, 65);
+            tblp_thangnam2.Name = "tblp_thangnam2";
+            tblp_thangnam2.RowCount = 1;
+            tblp_thangnam2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tblp_thangnam2.Size = new Size(774, 54);
+            tblp_thangnam2.TabIndex = 21;
+            // 
+            // label2
+            // 
+            label2.Dock = DockStyle.Right;
+            label2.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(73, 0);
+            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 54);
+            label2.TabIndex = 5;
+            label2.Text = "Tháng :";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Dock = DockStyle.Left;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            comboBox1.Location = new Point(198, 5);
+            comboBox1.Margin = new Padding(5);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(147, 41);
+            comboBox1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.Dock = DockStyle.Right;
+            label3.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(459, 0);
+            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 54);
+            label3.TabIndex = 13;
+            label3.Text = "Năm :";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Dock = DockStyle.Left;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(584, 5);
+            comboBox2.Margin = new Padding(5);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(150, 41);
+            comboBox2.TabIndex = 11;
+            // 
+            // tblp_lv2
+            // 
+            tblp_lv2.ColumnCount = 1;
+            tblp_lv2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_lv2.Controls.Add(listView1, 0, 0);
+            tblp_lv2.Dock = DockStyle.Fill;
+            tblp_lv2.Location = new Point(3, 125);
+            tblp_lv2.Name = "tblp_lv2";
+            tblp_lv2.RowCount = 1;
+            tblp_lv2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_lv2.Size = new Size(774, 234);
+            tblp_lv2.TabIndex = 22;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11 });
+            listView1.Dock = DockStyle.Fill;
+            listView1.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            listView1.GridLines = true;
+            listView1.Location = new Point(5, 5);
+            listView1.Margin = new Padding(5);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(764, 224);
+            listView1.TabIndex = 7;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "STT";
+            columnHeader8.Width = 70;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Loại Phòng";
+            columnHeader9.TextAlign = HorizontalAlignment.Center;
+            columnHeader9.Width = 150;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Doanh Thu";
+            columnHeader10.TextAlign = HorizontalAlignment.Center;
+            columnHeader10.Width = 200;
+            // 
+            // columnHeader11
+            // 
+            columnHeader11.Text = "Tỉ Lệ";
+            columnHeader11.TextAlign = HorizontalAlignment.Center;
+            columnHeader11.Width = 200;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(tblp_TieuDe1, 0, 0);
+            tableLayoutPanel1.Controls.Add(tblp_thangnam1, 0, 1);
+            tableLayoutPanel1.Controls.Add(tblp_lv1, 0, 2);
+            tableLayoutPanel1.Controls.Add(tblp_btn1, 0, 3);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.4736843F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 57.36842F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.1578951F));
+            tableLayoutPanel1.Size = new Size(780, 419);
+            tableLayoutPanel1.TabIndex = 19;
+            // 
+            // tblp_TieuDe1
+            // 
+            tblp_TieuDe1.ColumnCount = 1;
+            tblp_TieuDe1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_TieuDe1.Controls.Add(label4, 0, 0);
+            tblp_TieuDe1.Dock = DockStyle.Top;
+            tblp_TieuDe1.Location = new Point(3, 3);
+            tblp_TieuDe1.Name = "tblp_TieuDe1";
+            tblp_TieuDe1.RowCount = 1;
+            tblp_TieuDe1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_TieuDe1.Size = new Size(774, 51);
+            tblp_TieuDe1.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaption;
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(5, 0);
+            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(764, 51);
+            label4.TabIndex = 0;
+            label4.Text = "Báo Cáo Mật Độ Sử Dụng Phòng ";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // tblp_thangnam1
+            // 
+            tblp_thangnam1.ColumnCount = 4;
+            tblp_thangnam1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tblp_thangnam1.Controls.Add(label5, 0, 0);
+            tblp_thangnam1.Controls.Add(comboBox3, 1, 0);
+            tblp_thangnam1.Controls.Add(label6, 2, 0);
+            tblp_thangnam1.Controls.Add(comboBox4, 3, 0);
+            tblp_thangnam1.Dock = DockStyle.Fill;
+            tblp_thangnam1.Location = new Point(3, 65);
+            tblp_thangnam1.Name = "tblp_thangnam1";
+            tblp_thangnam1.RowCount = 1;
+            tblp_thangnam1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tblp_thangnam1.Size = new Size(774, 54);
+            tblp_thangnam1.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.Dock = DockStyle.Right;
+            label5.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(56, 0);
+            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 54);
+            label5.TabIndex = 1;
+            label5.Text = "Tháng :";
+            label5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Dock = DockStyle.Left;
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            comboBox3.Location = new Point(198, 5);
+            comboBox3.Margin = new Padding(5);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(149, 41);
+            comboBox3.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.Dock = DockStyle.Right;
+            label6.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(459, 0);
+            label6.Margin = new Padding(5, 0, 5, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 54);
+            label6.TabIndex = 12;
+            label6.Text = "Năm :";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Dock = DockStyle.Left;
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox4.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(584, 5);
+            comboBox4.Margin = new Padding(5);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(150, 41);
+            comboBox4.TabIndex = 10;
+            // 
+            // tblp_lv1
+            // 
+            tblp_lv1.ColumnCount = 1;
+            tblp_lv1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_lv1.Controls.Add(listView2, 0, 0);
+            tblp_lv1.Dock = DockStyle.Fill;
+            tblp_lv1.Location = new Point(3, 125);
+            tblp_lv1.Name = "tblp_lv1";
+            tblp_lv1.RowCount = 1;
+            tblp_lv1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_lv1.Size = new Size(774, 234);
+            tblp_lv1.TabIndex = 17;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader12, columnHeader13, columnHeader14, columnHeader15 });
+            listView2.Dock = DockStyle.Fill;
+            listView2.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            listView2.GridLines = true;
+            listView2.Location = new Point(5, 5);
+            listView2.Margin = new Padding(5);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(764, 224);
+            listView2.TabIndex = 3;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // columnHeader12
+            // 
+            columnHeader12.Text = "STT";
+            columnHeader12.Width = 70;
+            // 
+            // columnHeader13
+            // 
+            columnHeader13.Text = "Phòng";
+            columnHeader13.TextAlign = HorizontalAlignment.Center;
+            columnHeader13.Width = 150;
+            // 
+            // columnHeader14
+            // 
+            columnHeader14.Text = "Số Ngày Thuê";
+            columnHeader14.TextAlign = HorizontalAlignment.Center;
+            columnHeader14.Width = 200;
+            // 
+            // columnHeader15
+            // 
+            columnHeader15.Text = "Tỉ Lệ";
+            columnHeader15.TextAlign = HorizontalAlignment.Center;
+            columnHeader15.Width = 200;
+            // 
+            // tblp_btn1
+            // 
+            tblp_btn1.ColumnCount = 1;
+            tblp_btn1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_btn1.Controls.Add(button2, 0, 0);
+            tblp_btn1.Dock = DockStyle.Right;
+            tblp_btn1.Location = new Point(627, 365);
+            tblp_btn1.Name = "tblp_btn1";
+            tblp_btn1.RowCount = 1;
+            tblp_btn1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tblp_btn1.Size = new Size(150, 51);
+            tblp_btn1.TabIndex = 18;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Fill;
+            button2.Location = new Point(4, 3);
+            button2.Margin = new Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(142, 45);
+            button2.TabIndex = 8;
+            button2.Text = "Lọc";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // tblp_BaoCao
+            // 
+            tblp_BaoCao.ColumnCount = 2;
+            tblp_BaoCao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_BaoCao.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tblp_BaoCao.Controls.Add(tableLayoutPanel1, 0, 0);
+            tblp_BaoCao.Controls.Add(tableLayoutPanel2, 1, 0);
+            tblp_BaoCao.Dock = DockStyle.Fill;
+            tblp_BaoCao.Location = new Point(0, 0);
+            tblp_BaoCao.Name = "tblp_BaoCao";
+            tblp_BaoCao.RowCount = 1;
+            tblp_BaoCao.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tblp_BaoCao.Size = new Size(1572, 425);
+            tblp_BaoCao.TabIndex = 26;
+            // 
             // Form_Baocao
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1572, 425);
+            Controls.Add(tblp_BaoCao);
             Controls.Add(btn_Loclp);
             Controls.Add(lb_namlp);
             Controls.Add(lb_nammd);
@@ -284,6 +718,17 @@
             Name = "Form_Baocao";
             Text = "Form1";
             Load += Form_Baocaomatdo_Load;
+            tableLayoutPanel2.ResumeLayout(false);
+            tblp_TieuDe2.ResumeLayout(false);
+            tblp_btn2.ResumeLayout(false);
+            tblp_thangnam2.ResumeLayout(false);
+            tblp_lv2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tblp_TieuDe1.ResumeLayout(false);
+            tblp_thangnam1.ResumeLayout(false);
+            tblp_lv1.ResumeLayout(false);
+            tblp_btn1.ResumeLayout(false);
+            tblp_BaoCao.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -311,5 +756,38 @@
         private Label lb_nammd;
         private Label lb_namlp;
         private Button btn_Loclp;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tblp_TieuDe2;
+        private Label label1;
+        private TableLayoutPanel tblp_btn2;
+        private Button button1;
+        private TableLayoutPanel tblp_thangnam2;
+        private Label label2;
+        private ComboBox comboBox1;
+        private Label label3;
+        private ComboBox comboBox2;
+        private TableLayoutPanel tblp_lv2;
+        private ListView listView1;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
+        private ColumnHeader columnHeader11;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tblp_TieuDe1;
+        private Label label4;
+        private TableLayoutPanel tblp_thangnam1;
+        private Label label5;
+        private ComboBox comboBox3;
+        private Label label6;
+        private ComboBox comboBox4;
+        private TableLayoutPanel tblp_lv1;
+        private ListView listView2;
+        private ColumnHeader columnHeader12;
+        private ColumnHeader columnHeader13;
+        private ColumnHeader columnHeader14;
+        private ColumnHeader columnHeader15;
+        private TableLayoutPanel tblp_btn1;
+        private Button button2;
+        private TableLayoutPanel tblp_BaoCao;
     }
 }
