@@ -21,6 +21,7 @@ namespace QLKSGUI
             btn_Tim.Click += btn_Tim_Click; // Gán sự kiện Click cho nút tìm
             btn_reset.Click += btn_reset_Click; // Gán sự kiện Click cho nút reset
             lv_HoaDonThanhToan.SelectedIndexChanged += lv_HoaDonThanhToan_SelectedIndexChanged; // Gán sự kiện khi chọn item trong ListView
+            btn_ThanhToan.Enabled = false;
         }
 
         // Tải danh sách thuê lên ListView
@@ -70,9 +71,14 @@ namespace QLKSGUI
         {
             if (lv_HoaDonThanhToan.SelectedItems.Count > 0)
             {
-                // Lấy dữ liệu từ Tag của item đã chọn
                 dynamic itemData = lv_HoaDonThanhToan.SelectedItems[0].Tag;
                 txt_TriGia.Text = string.Format("{0:#,##0}", itemData.ThanhTien); // Hiển thị thành tiền
+                btn_ThanhToan.Enabled = true; // Bật nút thanh toán
+            }
+            else
+            {
+                txt_TriGia.Clear(); // Xóa thông tin trị giá
+                btn_ThanhToan.Enabled = false; // Tắt nút thanh toán
             }
         }
 
