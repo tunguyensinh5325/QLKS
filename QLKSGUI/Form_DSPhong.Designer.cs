@@ -38,6 +38,7 @@
             btn_Thanhtoan = new Button();
             tblp_DSPhong = new TableLayoutPanel();
             tblp_input = new TableLayoutPanel();
+            cbb_TinhTrang = new ComboBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -164,11 +165,13 @@
             // 
             // tblp_input
             // 
-            tblp_input.ColumnCount = 2;
+            tblp_input.ColumnCount = 3;
             tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.5470524F));
-            tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 86.45295F));
+            tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.4705276F));
+            tblp_input.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.9824181F));
             tblp_input.Controls.Add(btn_TimPhong, 0, 0);
             tblp_input.Controls.Add(cbbox_Phong, 1, 0);
+            tblp_input.Controls.Add(cbb_TinhTrang, 2, 0);
             tblp_input.Dock = DockStyle.Fill;
             tblp_input.Location = new Point(3, 82);
             tblp_input.Name = "tblp_input";
@@ -176,6 +179,16 @@
             tblp_input.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tblp_input.Size = new Size(967, 47);
             tblp_input.TabIndex = 10;
+            // 
+            // cbb_TinhTrang
+            // 
+            cbb_TinhTrang.Dock = DockStyle.Left;
+            cbb_TinhTrang.FormattingEnabled = true;
+            cbb_TinhTrang.Items.AddRange(new object[] { "Trống", "Đã Thuê" });
+            cbb_TinhTrang.Location = new Point(477, 3);
+            cbb_TinhTrang.Name = "cbb_TinhTrang";
+            cbb_TinhTrang.Size = new Size(226, 33);
+            cbb_TinhTrang.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
@@ -264,5 +277,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
+        private ComboBox cbb_TinhTrang;
     }
 }

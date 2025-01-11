@@ -222,5 +222,53 @@ namespace QLKSDAO
             return phong;
         }
 
+        public static List<Phong> LayDSPhongTheoTinhTrang(string tinhTrang)
+        {
+            string query = "SELECT * FROM Phong WHERE TinhTrang = @TinhTrang";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@TinhTrang", tinhTrang);
+
+            List<Phong> dsPhong = new List<Phong>();
+            DataTable dtPhong = DataProvider.SelectData(query, CommandType.Text, parameters);
+
+            foreach (DataRow row in dtPhong.Rows)
+            {
+                Phong phong = new Phong
+                {
+                    MaPhong = row["MaPhong"].ToString(),
+                    LoaiPhong = row["LoaiPhong"].ToString(),
+                    TinhTrang = row["TinhTrang"].ToString(),
+                    Gia = Convert.ToInt32(row["Gia"]),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+                dsPhong.Add(phong);
+            }
+            return dsPhong;
+        }
+
+        public static List<Phong> LayDSPhongTheoLoaiVaTinhTrang(string loaiPhong, string tinhTrang)
+        {
+            string query = "SELECT * FROM Phong WHERE LoaiPhong = @LP AND TinhTrang = @TinhTrang";
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = new SqlParameter("@LP", loaiPhong);
+            parameters[1] = new SqlParameter("@TinhTrang", tinhTrang);
+
+            List<Phong> dsPhong = new List<Phong>();
+            DataTable dtPhong = DataProvider.SelectData(query, CommandType.Text, parameters);
+
+            foreach (DataRow row in dtPhong.Rows)
+            {
+                Phong phong = new Phong
+                {
+                    MaPhong = row["MaPhong"].ToString(),
+                    LoaiPhong = row["LoaiPhong"].ToString(),
+                    TinhTrang = row["TinhTrang"].ToString(),
+                    Gia = Convert.ToInt32(row["Gia"]),
+                    GhiChu = row["GhiChu"].ToString()
+                };
+                dsPhong.Add(phong);
+            }
+            return dsPhong;
+        }
     }
 }

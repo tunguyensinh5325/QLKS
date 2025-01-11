@@ -1,4 +1,5 @@
 ﻿using QLKSBUS;
+using QLKSDAO;
 using QLKSDTO;
 
 namespace QLKSGUI
@@ -22,6 +23,7 @@ namespace QLKSGUI
         {
             dtgv_dsphong.DataSource = PhongBUS.LayDSPhongTrong();
             cbbox_Phong.SelectedIndex = 0;
+            cbb_TinhTrang.SelectedIndex = 0;
             btn_TimPhong.Click += btn_TimPhong_Click;
         }
         private void dtgv_dsphong_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -42,22 +44,24 @@ namespace QLKSGUI
         }
         private void btn_TimPhong_Click(object sender, EventArgs e)
         {
-            string selectedItem = cbbox_Phong.SelectedItem?.ToString();
+            string selectedRoom = cbbox_Phong.SelectedItem?.ToString();
+            string selectedStatus = cbb_TinhTrang.SelectedItem?.ToString();
 
-            if (selectedItem == null)
+            if (selectedRoom == null || selectedStatus == null)
             {
-                MessageBox.Show("Vui lòng chọn loại phòng!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn loại phòng và tình trạng!", "Thông báo");
                 return;
             }
 
-            if (selectedItem == "Tất cả")
+            if (selectedRoom == "Tất cả")
             {
-                dtgv_dsphong.DataSource = PhongBUS.LayDSPhongTrong();
-                return;
+                dtgv_dsphong.DataSource = PhongDAO.LayDSPhongTheoTinhTrang(selectedStatus);
             }
-
-            string searchType = "Phòng " + selectedItem.ToLower();
-            dtgv_dsphong.DataSource = PhongBUS.TimPhongTheoLoai(searchType);
+            else
+            {
+                string searchType = "Phòng " + selectedRoom.ToLower();
+                dtgv_dsphong.DataSource = PhongDAO.LayDSPhongTheoLoaiVaTinhTrang(searchType, selectedStatus);
+            }
         }
 
 
