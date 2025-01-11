@@ -238,8 +238,6 @@ namespace QLKSGUI
                 return;
             }
             string maPhong = cbb_Phong.SelectedItem.ToString().Split(',')[0].Trim();
-            string loaiPhong = cbb_Phong.SelectedItem.ToString().Split(',')[1].Trim();
-            string giaPhong = cbb_Phong.SelectedItem.ToString().Split(',')[2].Trim();
             
             if (liv_KhachHang.Items.Count == 0)
             {
@@ -388,6 +386,7 @@ namespace QLKSGUI
                 }
 
                 btn_Them.Text = "Thêm"; 
+                
             }
         }
         private void btn_SuaThongTin_Click(object sender, EventArgs e)
