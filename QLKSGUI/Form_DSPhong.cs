@@ -18,6 +18,7 @@ namespace QLKSGUI
             dtgv_dsphong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             InitializeTenantPanel();
         }
+
         private void InitializeTenantPanel()
         {
             overlayPanel = new Panel
@@ -95,6 +96,13 @@ namespace QLKSGUI
             cbbox_Phong.SelectedIndex = 0;
             cbb_TinhTrang.SelectedIndex = 0;
             btn_TimPhong.Click += btn_TimPhong_Click;
+
+            this.dtgv_dsphong.Columns["MaPhong"].HeaderText = "Mã Phòng";
+            this.dtgv_dsphong.Columns["LoaiPhong"].HeaderText = "Loại Phòng";
+            this.dtgv_dsphong.Columns["TinhTrang"].HeaderText = "Tình Trạng";
+            this.dtgv_dsphong.Columns["Gia"].HeaderText = "Giá";
+            this.dtgv_dsphong.Columns["GhiChu"].HeaderText = "Ghi Chú";
+            this.Text = "Danh Sách Phòng";
         }
         private void dtgv_dsphong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -114,6 +122,9 @@ namespace QLKSGUI
             overlayPanel.Visible = true;
             tenantPanel.BringToFront();
             tenantPanel.Visible = true;
+            this.tenantGrid.Columns["TenKH"].HeaderText = "Tên Khách Hàng";
+            this.tenantGrid.Columns["LoaiKH"].HeaderText = "Loại Khách Hàng";
+            this.tenantGrid.Columns["DiaChi"].HeaderText = "Địa Chỉ";
         }
         private void dtgv_dsphong_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
