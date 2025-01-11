@@ -6,6 +6,9 @@ namespace QLKSGUI
 {
     public partial class Form_DSPhong : Form
     {
+        private Panel tenantPanel;
+        private DataGridView tenantGrid;
+        private Panel overlayPanel;
         public Form_DSPhong()
         {
 
@@ -13,6 +16,73 @@ namespace QLKSGUI
             LoadData();
             dtgv_dsphong.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dtgv_dsphong_RowPostPaint);
             dtgv_dsphong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            InitializeTenantPanel();
+        }
+        private void InitializeTenantPanel()
+        {
+            overlayPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.Black,
+                Visible = false
+            };
+            this.Controls.Add(overlayPanel);
+
+            tenantPanel = new Panel
+            {
+                BorderStyle = BorderStyle.FixedSingle,
+                Size = new Size(700, 400),
+                Visible = false,
+                BackColor = Color.White
+            };
+
+            tenantGrid = new DataGridView
+            {
+                Dock = DockStyle.None,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                ReadOnly = true,
+                Location = new Point(10, 40), 
+                Size = new Size(680, 350) 
+            };
+
+            Button closeBtn = new Button
+            {
+                Text = "×", 
+                Size = new Size(30, 30),
+                Location = new Point(tenantPanel.Width - 40, 5),
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                Cursor = Cursors.Hand
+            };
+            closeBtn.Click += (s, e) => HideTenantPanel();
+
+            Label titleLabel = new Label
+            {
+                Text = "Danh sách khách hàng đang thuê",
+                Font = new Font("Times New Roman", 14, FontStyle.Bold),
+                Location = new Point(10, 10),
+                AutoSize = true
+            };
+
+            tenantPanel.Controls.Add(tenantGrid);
+            tenantPanel.Controls.Add(closeBtn);
+            tenantPanel.Controls.Add(titleLabel);
+
+            this.Controls.Add(tenantPanel);
+
+            overlayPanel.Click += (s, e) => HideTenantPanel();
+
+            this.KeyPreview = true;
+            this.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Escape && tenantPanel.Visible)
+                    HideTenantPanel();
+            };
+        }
+        private void HideTenantPanel()
+        {
+            tenantPanel.Visible = false;
+            overlayPanel.Visible = false;
         }
         private void Form_DSPhong_Load(object sender, EventArgs e)
         {
@@ -25,6 +95,25 @@ namespace QLKSGUI
             cbbox_Phong.SelectedIndex = 0;
             cbb_TinhTrang.SelectedIndex = 0;
             btn_TimPhong.Click += btn_TimPhong_Click;
+        }
+        private void dtgv_dsphong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string maPhong = dtgv_dsphong.Rows[e.RowIndex].Cells["MaPhong"].Value.ToString();
+            var tenants = KhachHangDAO.LayDSKhachHangDangThueCuaPhong(maPhong);
+
+            tenantGrid.DataSource = tenants;
+
+            tenantPanel.Location = new Point(
+                (this.ClientSize.Width - tenantPanel.Width) / 2,
+                (this.ClientSize.Height - tenantPanel.Height) / 2
+            );
+
+            overlayPanel.BringToFront();
+            overlayPanel.Visible = true;
+            tenantPanel.BringToFront();
+            tenantPanel.Visible = true;
         }
         private void dtgv_dsphong_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {

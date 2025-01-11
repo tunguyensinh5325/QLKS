@@ -100,6 +100,7 @@
             dtgv_dsphong.RowTemplate.Height = 33;
             dtgv_dsphong.Size = new Size(959, 335);
             dtgv_dsphong.TabIndex = 4;
+            dtgv_dsphong.CellMouseDoubleClick += dtgv_dsphong_CellMouseDoubleClick;
             dtgv_dsphong.RowPostPaint += dtgv_dsphong_RowPostPaint;
             // 
             // btn_Thoat
