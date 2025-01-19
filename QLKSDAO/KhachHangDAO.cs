@@ -131,7 +131,7 @@ namespace QLKSDAO
                     DiaChi = row["DiaChi"].ToString()
                 };
             }
-            kh.CMND= kh.CMND.Replace(" ", "");
+            if (kh!=null) kh.CMND= kh.CMND.Replace(" ", "");
             return kh;
         }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u7BzyruZyE8=",
+  "dgSpecHash": "ZhiyKzDoJoQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Downloads\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
+  "projectFilePath": "C:\\Users\\PC\\source\\repos\\tunguyensinh5325\\QLKS\\QLKSGUI\\QLKSGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
